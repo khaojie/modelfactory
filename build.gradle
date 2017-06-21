@@ -1,0 +1,8 @@
+allprojects {
+    group = 'com.khaojie'
+    version = '0.1'
+}
+
+subprojects {
+    apply plugin: 'java'
+}

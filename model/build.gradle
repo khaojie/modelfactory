@@ -1,0 +1,21 @@
+apply plugin: 'maven'
+apply plugin: 'java'
+apply plugin: 'idea'
+group 'com.khaojie'
+version '1.0-SNAPSHOT'
+jar {
+    baseName = 'model'
+    version =  '1.0-SNAPSHOT'
+}
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+repositories {
+    maven{
+        name 'HKJ'
+        url 'http://192.168.0.102:9081/repository/HKJ/'
+    }
+}
+dependencies {
+    compile group:'org.hibernate',name:'hibernate-entitymanager',version:'4.3.9.Final'
+    compile group:'org.codehaus.jackson',name:'jackson-mapper-asl',version:'1.9.13'
+}
