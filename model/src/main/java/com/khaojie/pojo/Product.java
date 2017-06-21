@@ -1,16 +1,22 @@
 package com.khaojie.pojo;
 
+import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
 /**
  * Created by khaojie on 2017/6/19.
  */
+@Entity
+@Table(name = "T_PRODUCT", catalog = "model_factory")
 public class Product {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "SID")
     private Long id;
+
+    @Column(name = "PROD_NAME", length = 50,nullable = false)
     private String name;
-    private List<Component> comps = new ArrayList<>();//零件集
-    private List<Process> processes = new ArrayList<>();//所有的工序，包括替换工序
 
     public Long getId() {
         return id;
@@ -18,14 +24,6 @@ public class Product {
 
     public void setId(Long id) {
         this.id = id;
-    }
-
-    public List<Component> getComps() {
-        return comps;
-    }
-
-    public void setComps(List<Component> comps) {
-        this.comps = comps;
     }
 
     public String getName() {
@@ -36,11 +34,4 @@ public class Product {
         this.name = name;
     }
 
-    public List<Process> getProcesses() {
-        return processes;
-    }
-
-    public void setProcesses(List<Process> processes) {
-        this.processes = processes;
-    }
 }

@@ -1,12 +1,23 @@
 package com.khaojie.pojo;
 
+import javax.persistence.*;
+
 /**
  * Created by khaojie on 2017/6/19
  * 水贴
  */
+@Entity
+@Table(name = "T_PROD_DECAL", catalog = "model_factory")
 public class ProductDecal {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "SID")
     private Long id;
+
+    @Column(name = "PROD_ID",nullable = false)
     private Long prodId;
+
+    @Column(name = "NO", length = 10,nullable = false)
     private String no;
 
     public Long getId() {

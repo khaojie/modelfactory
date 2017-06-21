@@ -1,21 +1,30 @@
 package com.khaojie.pojo;
 
+import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by khaojie on 2017/6/19.
- * 板件中的零件
+ * Created by khaojie on 2017/6/19
+ * 多个零件组装在一起，称为一个组件
  */
+@Entity
+@Table(name = "T_COMPONENT", catalog = "model_factory")
 public class Component {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "SID")
     private Long id;
-    private Long prodId;//T_Product.id;
-    private String boardNo;
-    private Integer number;
-    private String name;
-    private List<CompColor> colors = new ArrayList<>();//零件的需要用到的漆色
-    private List<ProductDecal> decals = new ArrayList<>();//涉及用到的水贴
+
+    @Column(name = "COMP_NAME",length = 100,nullable = false)
+    private String compName;
+
+    @Column(name = "NOTE",length = 500,nullable = false)
     private String note;
+
+    @Column(name = "SEQ")
+    private Integer seq;//对应产品中所处的组装顺序
+
     public Long getId() {
         return id;
     }
@@ -24,53 +33,28 @@ public class Component {
         this.id = id;
     }
 
-    public String getBoardNo() {
-        return boardNo;
+    public String getCompName() {
+        return compName;
     }
 
-    public void setBoardNo(String boardNo) {
-        this.boardNo = boardNo;
+    public void setCompName(String compName) {
+        this.compName = compName;
     }
 
-    public Integer getNumber() {
-        return number;
+
+    public String getNote() {
+        return note;
     }
 
-    public void setNumber(Integer number) {
-        this.number = number;
+    public void setNote(String note) {
+        this.note = note;
     }
 
-    public String getName() {
-        return name;
+    public Integer getSeq() {
+        return seq;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public List<CompColor> getColors() {
-        return colors;
-    }
-
-    public void setColors(List<CompColor> colors) {
-        this.colors = colors;
-    }
-
-    public Long getProdId() {
-        return prodId;
-    }
-
-    public void setProdId(Long prodId) {
-        this.prodId = prodId;
-    }
-
-    /**
-     * 是否为单色件
-     * @return
-     */
-    public Boolean isSingleColorComp(){
-        if(colors.size()>1)
-            return false;
-        return true;
+    public void setSeq(Integer seq) {
+        this.seq = seq;
     }
 }
