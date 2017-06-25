@@ -1,3 +1,6 @@
 server:
   port: 8082
   context-path: /design
+
+urlProp:
+  baseUrl: http://localhost:8082/design/

@@ -1,0 +1,26 @@
+﻿<div  xmlns:th="http://www.thymeleaf.org" class="col-sm-2 sidebar-offcanvas" id="sidebar" role="navigation" style="width: 200px;height:100%; background:  rgba(0, 0, 0, 0) linear-gradient(135deg, #32d1ac 0%, #4a90e2 100%) repeat scroll 0 0;">
+    <ul id="rootMenuNode" class="nav nav-sidebar">
+        <li>
+            <a  href="#">
+                系统管理<span style="float:right;" class="glyphicon-chevron-right glyphicon"></span>
+            </a>
+            <ul class="nav nav-sidebar dropdown-menu" style="position: absolute; top: 0px; margin: 0px; width: 200px; right: -200px; left: auto; ">
+                    <li>
+                        <a hassub="0" onclick="pageController.loadMenuPage('agentStatus/agentStatusConfig','amenu_11_page',1,'状态管理')"  href="#">
+                            状态管理<span style="float:right;" class="glyphicon">&nbsp;</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a hassub="0" onclick="pageController.loadMenuPage('cache/initCacheMaintain','amenu_12_page',1,'重置缓存')"  href="#">
+                            重置缓存<span style="float:right;" class="glyphicon">&nbsp;</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a hassub="0" onclick="pageController.loadMenuPage('bill/doTimer','amenu_13_page',1,'手动执行定时器')"  href="#">
+                            手动执行定时器<span style="float:right;" class="glyphicon">&nbsp;</span>
+                        </a>
+                    </li>
+            </ul>
+        </li>
+    </ul>
+</div>

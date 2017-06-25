@@ -1,0 +1,57 @@
+<div style="display: none;"  xmlns:th="http://www.thymeleaf.org">
+    <script type="text/javascript" th:src="@{/js/common/envConstant.js(timestamp=${#httpServletRequest.getAttribute('loginTimeStr')})}"></script>
+    <script type="text/javascript" th:src="@{/js/jquery-2.1.1.min.js}"></script>
+    <script type="text/javascript" th:src="@{/js/jquery.loading.js}"></script>
+    <script type="text/javascript" th:src="@{/js/jquery-ui.min.js}"></script>
+    <script type="text/javascript" th:src="@{/js/bootstrap.min.js}"></script>
+    <script type="text/javascript" th:src="@{/js/prettify.js}"></script>
+    <script type="text/javascript" th:src="@{/js/jquery.dataTables.min.js}"></script>
+    <script type="text/javascript" th:src="@{/js/dataTables.bootstrap.min.js}"></script>
+    <script type="text/javascript" th:src="@{/js/bootstrap-datetimepicker.js}"></script>
+    <script type="text/javascript" th:src="@{/js/bootstrap-datepicker.js}"></script>
+    <script type="text/javascript" th:src="@{/js/bootstrap-datetimepicker.zh-CN.js}" charset="UTF-8"></script>
+    <script type="text/javascript" th:src="@{/js/bootstrap-datepicker.zh-CN.js}" charset="UTF-8"></script>
+    <script type="text/javascript" th:src="@{/js/bootstrap-dialog.min.js}" charset="UTF-8"></script>
+    <script type="text/javascript" th:src="@{/js/yepnope.js}"></script>
+    <script type="text/javascript" th:src="@{/js/bootstrap-multiselect.js}"></script>
+    <script type="text/javascript" th:src="@{/js/template.js}"></script>
+    <script type="text/javascript" th:src="@{/js/common/common.js(timestamp=${#httpServletRequest.getAttribute('loginTimeStr')})}"></script>
+    <script type="text/javascript" th:src="@{/js/MyUtil.js(timestamp=${#httpServletRequest.getAttribute('loginTimeStr')})}"></script>
+    <script type="text/javascript" th:src="@{/js/util/DateUtil.js(timestamp=${#httpServletRequest.getAttribute('loginTimeStr')})}"></script>
+    <script type="text/javascript" th:src="@{/js/util/myutil.storage.js(timestamp=${#httpServletRequest.getAttribute('loginTimeStr')})}"></script>
+    <script type="text/javascript" th:src="@{/js/common/pageController.js(timestamp=${#httpServletRequest.getAttribute('loginTimeStr')})}"></script>
+    <script type="text/javascript" th:src="@{/js/user/userController.js(timestamp=${#httpServletRequest.getAttribute('loginTimeStr')})}"></script>
+    <script type="text/javascript" th:src="@{/js/common/idRepeatController.js(timestamp=${#httpServletRequest.getAttribute('loginTimeStr')})}"></script>
+    <script type="text/javascript" th:src="@{/js/websocket/webSocketController.js(timestamp=${#httpServletRequest.getAttribute('loginTimeStr')})}"></script>
+    <script charset="utf-8" th:src="@{/plugin/kindeditor/kindeditor-all.js}"></script>
+    <script charset="utf-8" th:src="@{/plugin/kindeditor/lang/zh_CN.js}"></script>
+    <script charset="utf-8" th:src="@{/plugin/kindeditor/plugins/code/prettify.js}"></script>
+    <script type="text/javascript" th:src="@{/js/chosen.jquery.js(timestamp=${#httpServletRequest.getAttribute('loginTimeStr')})}"></script>
+    <script type="text/javascript" th:src="@{/js/bootstrap-table.min.js}"></script>
+    <script type="text/javascript" th:src="@{/js/bootstrap-table-zh-CN.js}"></script>
+    <script  th:inline="javascript">
+        /*<![CDATA[*/
+        var baseUrl =  [[${@urlProp.getBaseUrl()}]];
+        if (typeof define === 'function') define.amd = false;  //关闭Jquery插件对AMD模块的兼容
+        $(function () {
+            buildMenu();
+            pageController.initDivMainWidth();
+            pageController.init();
+            userController.globalAjaxSetUp();
+            $.ajaxSetup({cache:false});
+        });
+        function buildMenu() {
+            var root = document.getElementById("rootMenuNode");
+            var uls = root.getElementsByTagName("ul");
+            for(var i=0;i<uls.length;i++){
+                var lis = uls[i].getElementsByTagName("li");
+                if(lis.length == 0){
+                    root.removeChild(uls[i].parentNode);
+                }
+            }
+        }
+        /*]]>*/
+
+    </script>
+
+</div>

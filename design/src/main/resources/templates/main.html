@@ -1,9 +1,26 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-    <head th:replace="header">
-
-    </head>
-<body>
-      fuck you!
-</body>
+    <head th:replace="header"></head>
+    <nav th:replace="nav_top"></nav>
+    <body>
+        <div id="divContainerFluid" class="container-fluid" style="margin: 0;padding: 0;">
+            <div class="row row-offcanvas row-offcanvas-left" style="margin: 0;padding: 0;height: inherit">
+                <div th:replace="menu"></div>
+                <div id="menuToogleBar" class="menuToogleBar" onclick="pageController.showOrHideMenu()" style="height:100%;width: 25px;"></div>
+                <div id="divMain" style="margin: 0;padding: 0;float:left;">
+                    <ul id="systemMainTab" class="nav nav-tabs">
+                        <li class="">
+                            <a href="javascript:;" class="menuToogleBarNew" onclick="pageController.showOrHideMenu()">
+                                <span class="glyphicon glyphicon-list" style=""></span>
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="tab-content" id="divMainContent" style="width: 100%;overflow-y: auto;">
+                    </div>
+                </div><!--/row-->
+            </div>
+        </div><!--/.container-->
+        <div style="display: none;" th:include="footer">
+        </div>
+    </body>
 </html>
