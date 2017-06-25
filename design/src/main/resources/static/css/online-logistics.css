@@ -1,0 +1,71 @@
+.new-order-flow  * {
+    font-family: 'STHeiti';
+}
+.new-of-storey li .icon {
+    position: absolute;
+    top: 15%;
+    left: -15px;
+    width: 9px;
+    height: 9px;
+    border-radius: 5px;
+    background-color: #ccc;
+}
+
+.new-of-storey li .icon.on {
+    background-color: #e4393c;
+}
+
+.new-order-arr {
+    position: absolute;
+    top: -4px;
+    left: -5px;
+    width: 9px;
+    height: 9px;
+    background: url(../img/jd-icon.png) 0 -425px no-repeat;
+}
+.new-order-flow {
+    margin-left: 5px;
+    margin-top: 20px;
+    padding: 5px 10px 0;
+    border-left: 1px solid #ccc;
+}
+
+.new-p-re {
+    position: relative;
+}
+ul, ol {
+    list-style: none;
+}
+ul, li {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+.new-of-storey li {
+    position: relative;
+    padding: 5px;
+    border-bottom: 1px dotted #e8e5e5;
+}
+
+.current {
+    color: #3a971c;
+    /*border-top: 1px dotted #3BF300;*/
+    /*background: #F7E1E1;*/
+}
+.whiteCover {
+    position: absolute;
+    top: -5px;
+    left: -15px;
+    width: 10px;
+    height: 30%;
+    background-color: white;
+}
+
+.grayCover {
+    position: absolute;
+    top: -5px;
+    left: -15px;
+    width: 10px;
+    height: 30%;
+    background-color: #f5f5f5;
+}

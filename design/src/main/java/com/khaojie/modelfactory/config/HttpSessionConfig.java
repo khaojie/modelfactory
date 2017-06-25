@@ -1,4 +1,4 @@
-package com.test.sessionshare;
+package com.khaojie.modelfactory.config;
 
 import org.springframework.session.data.redis.config.annotation.web.http.EnableRedisHttpSession;
 

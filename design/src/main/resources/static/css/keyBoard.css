@@ -1,0 +1,100 @@
+.keyButton:hover{
+    background-color:#00b3ee;
+}
+.keyButton{
+    background-color: white;
+    border-radius: 7px;
+    border-width: 1px;
+    font-size: 20px;
+    height: 50px;
+    line-height: 50px;
+    margin: 3px;
+    padding-bottom: 0;
+    padding-top: 0;
+    text-align: center;
+    width: 55px;
+}
+.sample-show-hide {
+    -webkit-transition:all linear 1s;
+    transition:all linear 1s;
+}
+.sample-show-hide.ng-hide {
+    opacity:0;
+}
+.pullButton{
+    background-color: #5792ee;
+    border-radius: 45px;
+    border-style: solid;
+    color: white;
+    cursor: pointer;
+    float: right;
+    height: 50px;
+    position: fixed;
+    right: 250px;
+    text-align: center;
+    top:0px;
+    width: 30px;
+}
+.pullButton:hover{
+    background-color:lightslategrey;
+}
+.functionButton{
+    background-color: white;
+    border-radius: 45px;
+    font-size: 15px;
+    height: 50px;
+    line-height: 50px;
+    margin: 10px 0px 10px 0px;
+    padding-bottom: 0;
+    padding-top: 0;
+    text-align: center;
+    width: 50px;
+    border-width: 5px;
+    border-color: floralwhite;
+    border-style: solid;
+    cursor: pointer;
+
+}
+.functionButton:hover{
+    background-color:#CCCCCC;
+}
+.shotMessage{
+    height: 50px;
+    margin: 30px 30px 30px 15px;
+    padding-bottom: 0;
+    padding-top: 0;
+    text-align: center;
+    width: 50px;
+    font-size: 35px;
+}
+.character360 {
+    cursor: pointer;
+    float: right;
+    text-align: center;
+    top:0px;
+    width: 50px;
+    height: 50px;
+    position: fixed;
+    right: 250px;
+    background: no-repeat url("../img/author.jpg") left top;
+    background-size: 50px 50px;
+    border-radius: 30px;
+    -webkit-transition: -webkit-transform 0.5s ease-out;
+    -moz-transition: -moz-transform 0.5s ease-out;
+    -o-transition: -o-transform 0.5s ease-out;
+    -ms-transition: -ms-transform 0.5s ease-out;
+}
+.character360:hover {
+    transform: rotateZ(180deg);
+}
+.status_bar{
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+}
+.idle{
+    background : springgreen;
+}
+.busy{
+    background : red;
+}

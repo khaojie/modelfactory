@@ -1,0 +1,61 @@
+/* top menu */
+.navbar-cust {
+    border-style: none;
+    background: rgb(60,141,188)!important;
+}
+
+/* 隐藏菜单>图标 */
+#rootMenuNode li span.glyphicon-chevron-right {
+    display: none;
+}
+.menuToogleBar {
+    display: none;
+}
+
+/* 左侧菜单 */
+#sidebar {
+    width: 180px!important;
+    height: 100%;
+    display: block;
+    background: rgb(34,45,50)!important;
+    -webkit-transition: .15s ease-in-out;
+    transition: .15s ease-in-out;
+}
+#sidebar li:hover{
+    border-left:2px solid rgb(60,141,188);
+    background: rgb(34,40,44)!important;
+}
+
+#sidebar li:hover a{
+    color: #fff!important;
+    padding-left: 18px;
+}
+
+#sidebar li a {
+    color: rgb(184,199,206)!important;
+}
+
+/* 二级菜单 */
+/*.nav-sidebar {
+    width: 180px!important;
+    right: -181px!important;
+}*/
+
+.nav-sidebar ul {
+    /*color: #000000;*/
+    background: rgba(94, 94, 94, 0.9);
+    /* background: rgba(0, 0, 0, 0) linear-gradient(135deg, #32d1ac 0%, #4a90e2 100%) repeat scroll 0 0; */
+}
+
+.nav-sidebar li a:hover {
+    color: rgb(255,255,255);
+    font-weight: normal;
+    font-size: 1em;
+    /*background-color: #428bca;*/
+    background:  none!important;
+}
+
+/* menu bar*/
+.menuToogleBarNew:hover {
+    background-color: #fff;
+}

@@ -1,0 +1,34 @@
+apply plugin: 'maven'
+apply plugin: 'java'
+//apply plugin: 'war'
+apply plugin: 'eclipse'
+apply plugin: 'idea'
+jar {
+    baseName = 'repository'
+    version =  '0.1'
+}
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+repositories {
+    maven{
+        name 'HKJ'
+        url 'http://192.168.0.102:9081/repository/HKJ_GROUP/'
+    }
+}
+task global_props1{
+    ext.spring_group_id="org.springframework"
+    ext.spring_version="4.3.8.RELEASE"
+}
+dependencies {
+    compile group:global_props1.spring_group_id,name:'spring-context',version:global_props1.spring_version
+    compile group:global_props1.spring_group_id,name:'spring-tx',version:global_props1.spring_version
+    compile group:global_props1.spring_group_id,name:'spring-orm',version:global_props1.spring_version
+    compile group:global_props1.spring_group_id,name:'spring-jdbc',version:global_props1.spring_version
+    compile group:'com.mchange',name:'c3p0',version:'0.9.5.2'
+    compile group:'mysql',name:'mysql-connector-java',version:'5.1.38'
+    compile group:'com.fd',name:'jpafordata',version:'3.8.2'
+    compile project(':model')
+}
+
+

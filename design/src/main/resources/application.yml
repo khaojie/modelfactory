@@ -1,0 +1,20 @@
+spring:
+  redis:
+    host: localhost
+    port: 6379
+  mvc:
+    view:
+      prefix: /WEB-INF/jsp/
+      suffix: .jsp
+  profiles:
+    active: dev
+extraProp:
+      loginTimeStr: 201705041530
+logging:
+    level:
+      root: info
+    file: d:\\fruitday\\design.log
+
+
+
+

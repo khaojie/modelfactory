@@ -1,0 +1,98 @@
+@CHARSET "UTF-8";
+
+td {
+	font-size: 12px;
+	margin: 0px;
+}
+
+th {
+	font-size: 12px;
+}
+
+.breadcrumb li {
+	font-size: 12px;
+}
+
+.num-box {
+	width: 60px;
+	height: 24px;
+	border-radius: 4px;
+	border: 1px solid #ccc;
+}
+
+.input-box {
+	width: 130px;
+	height: 28px;
+	font-size: 14px;
+	line-height: 1.42857143;
+	color: #555;
+	background-color: #fff;
+	background-image: none;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+	box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+	-webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow
+		ease-in-out .15s;
+	-o-transition: border-color ease-in-out .15s, box-shadow ease-in-out
+		.15s;
+	transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+}
+
+
+select {
+	height: 26px;
+	font-size: 12px;
+}
+
+.panel-body ul {
+	list-style-type: none;
+	padding: 0px;
+}
+.old-customer-info {
+	font-size: 12px;
+}
+
+.old-customer-info div {
+	display: inline-block;
+}
+.cutomer-item {
+	display: inline;
+	float: left;
+	padding-bottom: 5px;
+	margin: 0px;
+	font-size: 12px;
+}
+
+.order-item {
+	padding-bottom: 5px;
+	margin: 0px;
+	font-size: 12px;
+}
+
+.order-item span {
+	padding-right: 5px;
+	margin: 1px;
+}
+
+
+
+.save-new-customer {
+	text-align: right;
+	margin-right: 40px;
+	padding-bottom: 5px;
+}
+
+.prod-zeng {
+	float: right;
+	color: red;
+}
+
+
+.orderinfo ul li span{
+	 font-size: 10px;
+	 padding-right: 8px;
+}
+
+
+

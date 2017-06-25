@@ -1,0 +1,296 @@
+/*
+ * Style tweaks
+ * --------------------------------------------------
+ */
+html{
+  height: 100%;
+}
+*{
+  margin: 0;
+  padding: 0;
+  font-size: 14px;
+}
+body {
+  padding-top: 50px;
+  background-color: #f5f5f5;
+  margin:0 auto;
+  height:100%;
+  padding-right: 0;
+
+}
+footer {
+  padding-left: 15px;
+  padding-right: 15px;
+  background-color: #fff;
+}
+/*
+ * Off Canvas
+ * --------------------------------------------------
+ */
+@media screen and (max-width: 768px) {
+  .row-offcanvas {
+    position: relative;
+    -webkit-transition: all 0.25s ease-out;
+    -moz-transition: all 0.25s ease-out;
+    transition: all 0.25s ease-out;
+  }
+
+  .row-offcanvas-left
+  .sidebar-offcanvas {
+    left: -33%;
+  }
+
+  .row-offcanvas-left.active {
+    left: 33%;
+  }
+
+  .sidebar-offcanvas {
+    position: absolute;
+    top: 0;
+    width: 33%;
+    margin-left: 10px;
+  }
+}
+.required {
+  color: red;
+}
+.label {
+  font-size: 14px;
+}
+
+/* Sidebar navigation */
+.nav-sidebar {
+ /* background-color: #24bcbc;*/
+  margin-right: -15px;
+  margin-bottom: 20px;
+  margin-left: -15px;
+}
+
+.nav-sidebar ul{
+  background:  rgba(0, 0, 0, 0) linear-gradient(135deg, #32d1ac 0%, #4a90e2 100%) repeat scroll 0 0;
+}
+.nav-sidebar > li > a {
+  color: #fff;
+  padding-right: 20px;
+  padding-left: 20px;
+}
+.nav-sidebar li a:hover {
+  color: #fff;
+  font-weight: bold;
+  font-size: 16px;
+  /*background-color: #428bca;*/
+  background:  rgba(0, 0, 0, 0) linear-gradient(135deg, #0376F8 0%, #E31E7A 100%) repeat scroll 0 0;
+}
+.nav-sidebar li:hover ul {
+  display:block;
+}
+.menuToogleBar{
+  width: 20px;
+  /*background-color: #0074c7;*/
+  background:  rgba(0, 0, 0, 0) linear-gradient(135deg, #32d1ac 0%, #4a90e2 100%) repeat scroll 0 0;
+  display:inline;
+  float: left;
+  cursor:pointer;
+}
+.login_cust{
+  background:  rgba(0, 0, 0, 0) linear-gradient(135deg, #4a90e2 0%, #32d1ac 100%) repeat scroll 0 0;
+}
+/*
+ * Main content
+ */
+
+.main {
+  padding: 20px;
+  background-color: #fff;
+}
+@media (min-width: 768px) {
+  .main {
+    padding-right: 40px;
+    padding-left: 40px;
+  }
+}
+.main .page-header {
+  margin-top: 0;
+}
+.navbar-cust{
+  border-width: 0px;
+  background:  rgba(0, 0, 0, 0) linear-gradient(135deg, #32d1ac 0%, #4a90e2 100%) repeat scroll 0 0;
+  /*background-color: #0074c7;*/
+}
+
+.footer_cust{
+  background:  rgba(0, 0, 0, 0) linear-gradient(135deg, #4a90e2 0%, #32d1ac 100%) repeat scroll 0 0;
+  margin: 0;
+}
+
+.folderTitle{
+  color:#428bca;
+  font-weight: bold;
+  font-size: 15px;
+}
+.folderOPTitle{
+  color:#080808;
+  font-weight: bold;
+  font-size: 15px;
+}
+#orgModal{
+  background 		: url('../img/bkgd.png') repeat top left;
+  color 				: white;
+  font-family 		: tahoma;
+  font-weight 		: lighter;
+  padding-top 		: 40px;
+}
+
+.select{
+  opacity: 1.0
+}
+.unselect{
+  opacity: 0.2
+}
+
+.required-symbol:before {
+  content: '* ';
+  color: red;
+}
+
+input[type=checkbox]:checked + label.switch-label:after {
+  content: attr(data-text);
+}
+input[type=checkbox] + label.switch-label:after {
+  content: attr(data-text-un);
+}
+.table-striped tbody tr.highlight td { background-color: #32d1ac; }
+
+.gallery > span:hover>img {
+  z-index: 9999;
+}
+.gallery > span:hover > img {
+  transform: scale(10, 10) translate(22px,10px);
+  transition: transform 0.3s ease 0s;
+}
+.btn-360{
+  text-align: center;
+  border-radius: 30px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+.th-td-center th td {
+  text-align: center;
+}
+.event-list .nav >li >a {
+  border: 1px solid #ddd;
+  border-radius: 15px;
+}
+
+.nav-list > li.active > a {
+  border-style: none!important;
+  background-color: #F1F1F1;
+}
+.notice {
+  background-color: #f00;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 10px;
+  height: 20px;
+  left: 35px;
+  line-height: 20px;
+  position: absolute;
+  text-align: center;
+  top: -10px;
+  width: 20px;
+}
+.pagingElementLight{
+  min-width: 26px;
+  border-radius: 13px;
+  padding-left: 3px;
+  padding-right: 3px;
+  height: 26px;
+  color: #ffffff;
+  background: #64a131;
+  text-align:center;
+  margin-left: 20px;
+}
+.pagingElement{
+  color: #6FA5DB;
+  text-align:center;
+  margin-left: 20px;
+}
+.bb{
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  width: 100%;
+}
+
+.border_bottom {
+  border-style:none none solid none;
+  box-shadow:none;
+  border-radius:0;
+}
+.border_bottom:focus {
+  border-style:none none solid none;
+  box-shadow:none;
+}
+input.readonly{
+  border-width: 0px;
+}
+
+.breath_light {
+  /*width: 50px; */                                   /* 宽度 */
+  /*height: 4px; */                                   /* 高度 */
+  opacity: 0.5;                                   /* 不透明度 */
+  overflow: hidden;                               /* 溢出隐藏 */
+  background-color: #d7e8c4!important;                            /* 背景色 */
+  /*margin: 25% auto; */                              /* 外边距 */
+
+  /* IE10、Firefox and Opera，IE9以及更早的版本不支持 */
+  animation-name: breath;                         /* 动画名称 */
+  animation-duration: 3s;                         /* 动画时长3秒 */
+  animation-timing-function: ease-in-out;         /* 动画速度曲线：以低速开始和结束 */
+  animation-iteration-count: infinite;            /* 播放次数：无限 */
+
+  /* Safari and Chrome */
+  -webkit-animation-name: breath;                 /* 动画名称 */
+  -webkit-animation-duration: 3s;                 /* 动画时长3秒 */
+  -webkit-animation-timing-function: ease-in-out; /* 动画速度曲线：以低速开始和结束 */
+  -webkit-animation-iteration-count: infinite;    /* 播放次数：无限 */
+}
+
+@keyframes breath {
+  from { opacity: 0.5; }                          /* 动画开始时的不透明度 */
+  50%  { opacity: 0.9; }                          /* 动画50% 时的不透明度 */
+  to   { opacity: 0.5; }                          /* 动画结束时的不透明度 */
+}
+
+@-webkit-keyframes breath {
+  from { opacity: 0.5; }                          /* 动画开始时的不透明度 */
+  50%  { opacity: 0.9; }                          /* 动画50% 时的不透明度 */
+  to   { opacity: 0.5; }                          /* 动画结束时的不透明度 */
+}
+.custom-scroll .panel-body{
+  overflow-y: auto;
+  height:calc(100% - 42px);
+}
+.custom-scroll .panel-default{
+  height: inherit;
+}
+.workstation-case{
+  height: 170px;
+}
+/* 修改了客服中心首页 bootstrap默认的panel高度 */
+#ccs_agent_main_page .panel .panel-heading{
+  padding: 7px 15px!important;
+}
+#ccs_agent_main_page #agentMainPage_order .nav>li>a {
+  padding: 7px 15px!important;
+}
+/* 删除线效果 禁止点击 */
+.text-del {
+   text-decoration:line-through;
+   cursor:not-allowed;
+   pointer-events: none;
+ }
+.text-del:after{
+  content: "\00A0";
+}

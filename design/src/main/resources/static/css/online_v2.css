@@ -1,0 +1,391 @@
+*{margin: 0;padding: 0;}
+/* 重置了bootstarp相关样式 */
+.col-xs-1, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9, .col-xs-10, .col-xs-11, .col-xs-12 {
+	position: relative;
+	min-height: 1px;
+	padding-right: 5px;
+	padding-left: 5px;
+}
+.row {
+	margin-right: -5px;
+	margin-left: -5px;
+}
+.body-placeholder{background-color:#fff;top:0;bottom:0;right:0;left:0;position:absolute;z-index:2000}
+.body-placeholder img{width:100%;min-height:15rem}
+/*清除浮动*/
+.clearfix:after{
+	content:".";
+	display:block;
+	height:0;
+	clear:both;
+	visibility:hidden;
+}
+.disabled {
+	pointer-events: none;
+	color: rgb(200,200,200);
+}
+.center {
+	text-align: center;
+}
+.row>div:nth-last-child {
+	background-color: #00b3ee;
+}
+.caption_title_s {
+    width: 10em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    word-wrap: normal;
+    word-wrap: break-word;
+    word-break: break-all;
+    display: inline-block;
+}
+
+.caption_title_15 {
+    width: 15em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    word-wrap: normal;
+    word-wrap: break-word;
+    word-break: break-all;
+    display: inline-block;
+}
+
+.caption_title_30 {
+    width: 30em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    word-wrap: normal;
+    word-wrap: break-word;
+    word-break: break-all;
+    display: inline-block;
+}
+/* 左边和下面增大可操作区域 */
+.space-l-b {
+	padding-left: 30px!important;
+	padding-bottom: 15px!important;
+}
+
+.loading {
+	display: block;
+	background: rgba(214,214,214,0.7) url("data:image/gif;base64,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") no-repeat 50% 25%;
+	position: absolute;
+	z-index: 999;
+	width: 100%;
+	height: 100%;
+}
+
+/* 基础样式 */
+.online-body {
+	font-family: "Microsoft YaHei UI";
+	min-height: 300px;
+	height: 100%;
+	background-color: #f5f5f5;
+}
+
+.online-dialog-body {
+	font-family: "Microsoft YaHei UI";
+	min-height: 300px;
+	height: 100%;
+	background-color: #fff;
+}
+
+.module{
+	margin-top: 15px;
+	/* margin: 5px 20px; */
+}
+.row {
+	margin-top: 0.5em;
+}
+
+
+.coupon-list li {
+	display: block;
+	list-style: none;
+}
+.coupon-item p.discount {
+	font-size: 17px!important;
+}
+/*.coupon-list li div {
+	height: 55px;
+	background-color: rgb(255,255,255);
+	margin: 5px 0;
+	text-align: center;
+	font-size: 16px;
+	line-height: 55px;
+}*/
+
+/* 优惠券详情 */
+@media (min-width: 550px) {
+	.online-dialog-body .coupon-item ,
+	.online-body .coupon-item {
+		float: left;
+		width: 50%;
+		padding: 1%;
+	}
+	.online-dialog-body .coupon-item p.discount,
+	.online-body .coupon-item p.discount {
+		font-size: 17px!important;
+	}
+
+	.online-dialog-body .gift-item ,
+	.online-body .gift-item {
+		float: left;
+		width: 22.5%!important;
+	}
+	.online-dialog-body .gift-item:nth-child(4n+1),
+	.online-body .gift-item:nth-child(4n+1) {
+		margin-left:0;
+	}
+
+}
+
+.image-desc {
+	background-color: rgba(108,108,108,0.8);
+	height: 20px;
+	margin-top: -20px;
+	text-align: center;
+	line-height: 1.6;
+	font-size: 12px;
+	color: white;
+	overflow: hidden;
+}
+.image-desc:hover {
+	line-height: 1.5;
+	height: 110px;
+	margin-top: -110px;
+	overflow-y: scroll;
+	text-align: left;
+	/*border-top-right-radius: 8px;*/
+}
+
+.gift-list .image {
+	/*background-image:url(http://imagews4.fruitday.com/images/product_pic/11517/1/1-270x270-11517-1WS16K24.jpg);*/
+    background: no-repeat center;
+    height: 112px;
+    background-size:100%;
+	margin: auto auto;
+}
+.gift-item {
+	float: left;
+	width: 31.333%;
+	margin: 3px 0;
+}
+.gift-item +.gift-item{
+	margin-left:3%;
+}
+@media (max-width: 500px){
+	.online-dialog-body .gift-item:nth-child(3n+1),
+	.online-body .gift-item:nth-child(3n+1) {
+		margin-left:0;
+	}
+}
+
+.interaction {
+	padding: 5px 0;
+}
+.interaction li {
+	list-style: none;
+}
+.interaction-item {
+	text-align: center;
+	border: 1px none black;
+	border-right-style: solid;
+	/* border: 1px none solid black;
+	border-top: 0px; */
+}
+.interaction-item-last {
+	border-style: none;
+}
+.interaction-item:last-child {
+	border-style: none;
+}
+.interaction-item .title {
+	font-size: 14px;
+	color: #888;
+	font-weight: 300;
+}
+.interaction-item li {
+	margin-bottom: 10px;
+}
+
+.complain-info {
+	padding-bottom: 15px;
+	border-bottom: 1px solid #aaa;
+}
+
+
+/* 订单信息 */
+.onlineCs-media li {list-style: none;}
+.onlineCs-media {
+	width: 100%;
+	padding: 20px 0px;
+	border-bottom: 1px solid #D2D0CB;
+}
+
+.side-main {
+	display: inline-block;
+	float: left;
+	width: 60%;
+}
+.side-main img {
+	float: left;
+	display: inline-block;
+}
+.side-main ul {
+	display: inline-block;
+	margin: 0 3%;
+
+}
+.side-right {
+	display: inline-block;
+	width: 40%;
+	line-height: 115px;
+	text-align: center;
+}
+/* tab样式 */
+.orderTabs {
+	margin: 10px 0 ;
+	text-align: center;
+}
+.orderTabs > .nav-tabs {
+	display: inline-block;
+	border: 1px solid #ddd;
+	border-radius: 5px;
+}
+.orderTabs > .nav-tabs > li {
+	margin-bottom: 0!important;
+}
+.orderTabs > .nav > li > a {
+	padding: 6px 15px!important;
+}
+.orderTabs > .nav-tabs > li.active > a {
+	border-style: none!important;
+}
+
+.logi {
+	background-color: #fff;
+	border-top-right-radius: 15px;
+	border-bottom-right-radius: 15px;
+}
+
+.clearTest {
+	overflow: auto;
+	zoom: 1;
+}
+
+/* 自动完成 */
+.row-autocomplete {
+	display: none;
+	padding: 8px 15px;
+	margin-top: -10px;
+
+
+}
+.row-autocomplete div {
+	background-color:#eee;
+	max-height: 250px;
+	overflow-y: scroll;
+}
+.row-autocomplete li{
+	line-height: 2;
+	border-bottom: 1px solid #ddd;
+	cursor: pointer;
+	padding-left: 70px;
+}
+
+/* 订单module */
+#online_order_info_body .modal{
+	padding-left: 0!important;
+}
+#online_order_info_body .modal-dialog {
+	position: relative;
+	width: auto;
+	margin:0;
+}
+#online_order_info_body table {
+	font-size: 14px;
+}
+::-webkit-scrollbar{width: 5px;height: 5px;}
+::-webkit-scrollbar-track,::-webkit-scrollbar-thumb{border-radius: 1000px;border:0;border-right: 0px solid transparent;}
+::-webkit-scrollbar-track{box-shadow: 1px 1px 5px rgba(0,0,0,.2) inset;}
+::-webkit-scrollbar-thumb{min-height: 20px;background-clip:content-box;box-shadow: 0 0 0 5px rgba(0,0,0,.2) inset;}
+::-webkit-scrollbar-corner{background: transparent;}
+::-webkit-scrollbar{
+	width: 4px;
+	background-color: #F5F5F5;
+}
+
+.relative {
+	position: relative;
+}
+
+/* 已过期/已使用.. */
+.comm-expired:after {
+	content: '已过期';
+	position:absolute;
+	top:4px;
+	right:-6px;
+	transform:rotate(26.5deg);
+	-webkit-transform:rotate(26.5deg);
+	width:49px;
+	height:25px;
+	line-height:25px;
+	color:#4c3108;
+	font-size:10px;
+	font-weight:bold;
+	text-align:center;
+	text-shadow: 0 0 2px #fff, 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #0037ff, 0 0 20px #bebec1;
+}
+
+/* 已使用.. */
+.comm-used:after {
+	content: '已使用';
+	position:absolute;
+	top:4px;
+	right:-6px;
+	transform:rotate(26.5deg);
+	-webkit-transform:rotate(26.5deg);
+	width:49px;
+	height:25px;
+	line-height:25px;
+	color:#c67600;
+	font-size:10px;
+	font-weight:bold;
+	text-align:center;
+	text-shadow: 0 0 2px #fff, 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #ff00de, 0 0 20px #ff00de;
+}
+
+#order_search_type {
+	cursor: pointer;
+	background: transparent;
+}
+
+/* 呼叫中心订单列表样式 */
+.ccs-order-media {
+	padding: 0px 0px!important;
+}
+.ccs-order-media ul.list-inline {
+	line-height: 2.0em;
+	overflow-y: hidden;
+}
+.ccs-order-media ul.list-inline li{
+	display: inline-block;
+	width: calc(25% - 3px);
+	background-color: #F5F5F5;
+	text-align: center;
+	border-radius: 10px;
+}
+.ccs-order-media ul.list-inline li:hover{
+	line-height: calc(2.0em - 4px);
+	border-bottom: 2px solid #00b3ee;
+	cursor: pointer;
+}
+.ccs-order-media ul.list-inline li.disabled:hover{
+	line-height: 2.0em!important;
+	cursor: none!important;
+}
+
+.zxx_text_overflow {width:4em; white-space:nowrap; text-overflow:ellipsis; -o-text-overflow:ellipsis; overflow:hidden;}

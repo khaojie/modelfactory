@@ -1,1 +1,6 @@
-include 'model', 'modelvo', 'design'
+include 'model'
+include 'modelvo'
+include'design'
+include 'service'
+include 'repository'
+

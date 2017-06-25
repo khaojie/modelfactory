@@ -1,22 +1,10 @@
-buildscript {
-    repositories {
-        maven{
-            name 'HKJ'
-            url 'http://192.168.0.102:9081/repository/HKJ/'
-        }
-    }
-    dependencies {
-        classpath ('org.springframework.boot:spring-boot-gradle-plugin:1.5.3.RELEASE')
-    }
+plugins{
+    id 'org.springframework.boot' version '1.5.3.RELEASE'
+    id 'java'
+    id 'maven'
+//    id 'war'
 }
-
-
-apply plugin: 'maven'
-apply plugin: 'java'
-//apply plugin: 'war'
-apply plugin: 'eclipse'
-apply plugin: 'idea'
-apply plugin: 'org.springframework.boot'
+version='0.2'
 task global_props{
     ext.spring_boot_version='1.5.3.RELEASE'
     ext.spring_boot_group='org.springframework.boot'
@@ -27,31 +15,37 @@ task global_props{
 
 jar {
     baseName = 'design'
-    version =  '0.1'
 }
+
+//war{
+//    baseName = 'design'
+//}
 
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
 repositories {
-    maven{
-        name 'HKJ'
-        url 'http://192.168.0.102:9081/repository/HKJ/'
-    }
+    maven{ url 'http://192.168.0.102:9081/repository/HKJ_GROUP/'}
 }
 
+bootRepackage {
+    mainClass = 'com.khaojie.modelfactory.Application'
+}
 dependencies {
-//    compile group:'javax',name:'javaee-api',version:'7.0'
-//    providedCompile group:'javax.servlet',name:'jstl',version:'1.2'
+
     compile group:global_props.spring_boot_group,name:'spring-boot-starter-web',version:global_props.spring_boot_version
     compile group:global_props.spring_boot_group,name:'spring-boot-devtools',version:global_props.spring_boot_version
-    compile group:global_props.spring_session_group,name:'spring-session',version:global_props.spring_session_version
     compile group:global_props.spring_boot_group,name:'spring-boot-starter-redis',version:'1.4.6.RELEASE'
+    compile group:global_props.spring_session_group,name:'spring-session',version:global_props.spring_session_version
     compile("org.springframework.boot:spring-boot-starter-thymeleaf:1.5.3.RELEASE")
-	compile project(':model')
+    /**jsp support start**/
+    /*compile("javax.servlet:jstl")
+    compile("org.springframework.boot:spring-boot-starter-tomcat")
+    compile("org.apache.tomcat.embed:tomcat-embed-jasper")
+    compile("javax.servlet:javax.servlet-api")*/
+    /**jsp support end**/
 //	compile project(':modelvo')
-//    compile group:'org.apache.tomcat.embed',name: 'tomcat-embed-jasper',version: '8.5.14'
-
-//    testCompile group: 'junit', name: 'junit', version: '4.11'
+//  compile project(':service')
+//  testCompile group: 'junit', name: 'junit', version: '4.11'
 }
 
 

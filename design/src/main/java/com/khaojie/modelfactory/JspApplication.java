@@ -1,17 +1,27 @@
 package com.khaojie.modelfactory;
 
+import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.support.SpringBootServletInitializer;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.Bean;
+
+import java.util.Arrays;
 
 /**
  * Created by admin on 5/17/17.
  */
-@SpringBootApplication
-public class Application  {
+//@SpringBootApplication
+public class JspApplication extends SpringBootServletInitializer {
+    @Override
+    protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
+        return application.sources(JspApplication.class);
+    }
+
     public static void main(String[] args) {
-        SpringApplication.run(Application.class,args);
+        SpringApplication.run(JspApplication.class,args);
     }
 //    @Bean
 //    public CommandLineRunner commandLineRunner(ApplicationContext ctx) {
