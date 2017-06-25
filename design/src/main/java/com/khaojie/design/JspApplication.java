@@ -1,4 +1,4 @@
-package com.khaojie.modelfactory;
+package com.khaojie.design;
 
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;

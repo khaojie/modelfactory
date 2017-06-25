@@ -1,4 +1,4 @@
-package com.khaojie.modelfactory.web.interceptor;
+package com.khaojie.design.web.interceptor;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

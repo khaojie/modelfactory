@@ -1,4 +1,4 @@
-package com.khaojie.modelfactory.web.controller;
+package com.khaojie.design.web.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;

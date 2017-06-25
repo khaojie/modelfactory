@@ -1,6 +1,6 @@
-package com.khaojie.modelfactory.config;
+package com.khaojie.design.config;
 
-import com.khaojie.modelfactory.web.interceptor.PermissionInterceptor;
+import com.khaojie.design.web.interceptor.PermissionInterceptor;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;

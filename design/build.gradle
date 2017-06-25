@@ -28,7 +28,7 @@ repositories {
 }
 
 bootRepackage {
-    mainClass = 'com.khaojie.modelfactory.Application'
+    mainClass = 'com.khaojie.design.Application'
 }
 dependencies {
 

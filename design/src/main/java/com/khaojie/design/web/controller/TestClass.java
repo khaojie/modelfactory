@@ -1,4 +1,4 @@
-package com.khaojie.modelfactory.web.controller;
+package com.khaojie.design.web.controller;
 
 /**
  * Created by khaojie on 2017/6/24.
