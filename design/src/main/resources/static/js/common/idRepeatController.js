@@ -28,8 +28,7 @@ if(typeof (idRepeatController) == 'undefined'){
            return isMatched;
        } ,
        removePageId : function(pageId){//删除标签页时调用
-            if(systemIndicator.allowDetectIdRepeat=='off')
-                return;
+
             var tempIds = new Array();
             tempIds.push(pageId);
             for(var i=0;i<idRepeatController.strucIds.length;i++){
@@ -82,8 +81,7 @@ if(typeof (idRepeatController) == 'undefined'){
           this.strucIds.push(pageObj);
        },
        detectRepeatIdForNewPage:function(pageId){//侦测重复的ID
-           if(systemIndicator.allowDetectIdRepeat=='off')
-            return;
+
            var idList1 = new Array();
            $.each($("#"+pageId+" [id]"),function(){
                idList1.push($(this).attr('id'));

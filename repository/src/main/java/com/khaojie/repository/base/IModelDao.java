@@ -1,4 +1,4 @@
-package com.khaojie.repository;
+package com.khaojie.repository.base;
 
 import com.fd.dao.base.IBaseDao;
 

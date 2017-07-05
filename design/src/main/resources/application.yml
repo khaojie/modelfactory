@@ -10,6 +10,7 @@ spring:
     cache: false
   profiles:
     active: dev
+
 extraProp:
       loginTimeStr: 201705041530
 logging:
@@ -17,6 +18,11 @@ logging:
       root: info
     file: d:\\fruitday\\design.log
 
+customjpa:
+  generateDdl: true
+  database: MYSQL
+  databasePlatform: org.hibernate.dialect.MySQL5Dialect
+  showSql: true
 
 
 

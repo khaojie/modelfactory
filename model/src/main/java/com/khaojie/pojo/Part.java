@@ -31,6 +31,8 @@ public class Part {
     @Column(name = "NOTE",length = 500,nullable = false)
     private String note;
 
+
+    private Integer needPrePaint =1;
     public Long getId() {
         return id;
     }
@@ -77,5 +79,13 @@ public class Part {
 
     public void setNote(String note) {
         this.note = note;
+    }
+
+    public Integer getNeedPrePaint() {
+        return needPrePaint;
+    }
+
+    public void setNeedPrePaint(Integer needPrePaint) {
+        this.needPrePaint = needPrePaint;
     }
 }

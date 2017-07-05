@@ -4,3 +4,14 @@ server:
 
 urlProp:
   baseUrl: http://localhost:8082/design/
+
+datasource:
+  driverClass: com.mysql.jdbc.Driver
+  jdbcUrl: jdbc:mysql://192.168.0.102:3306/model_factory
+  user: root
+  password: root
+  initialPoolSize: 3
+  minPoolSize: 1
+  idleConnectionTestPeriod: 1800
+  maxPoolSize: 50
+  acquireIncrement: 5

@@ -20,6 +20,15 @@ public class Color {
     @Column(name = "COLOR_CODE", length = 10, nullable = false)
     private String code;
 
+    @Column(name = "MIX_FORMULA", length = 30)
+    private String mixFormula;
+
+    @Column(name = "BRANCH", nullable = false)
+    private Integer branch = 0 ;
+
+    @Column(name = "UU_ID",length = 50)
+    private String uuid;
+
     public Long getId() {
         return id;
     }
@@ -42,5 +51,29 @@ public class Color {
 
     public void setCode(String code) {
         this.code = code;
+    }
+
+    public String getMixFormula() {
+        return mixFormula;
+    }
+
+    public void setMixFormula(String mixFormula) {
+        this.mixFormula = mixFormula;
+    }
+
+    public Integer getBranch() {
+        return branch;
+    }
+
+    public void setBranch(Integer branch) {
+        this.branch = branch;
+    }
+
+    public String getUuid() {
+        return uuid;
+    }
+
+    public void setUuid(String uuid) {
+        this.uuid = uuid;
     }
 }

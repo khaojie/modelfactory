@@ -23,6 +23,8 @@ task global_props1{
 dependencies {
     compile group:global_props1.spring_group_id,name:'spring-context',version:global_props1.spring_version
     compile group:global_props1.spring_group_id,name:'spring-tx',version:global_props1.spring_version
+    compile('org.slf4j:slf4j-api:1.7.25')
+    compile project(':utils')
     compile project(':modelvo')
     compile project(':repository')
 }

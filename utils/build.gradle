@@ -1,0 +1,17 @@
+apply plugin: 'maven'
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'idea'
+jar {
+    baseName = 'utils'
+    version =  '0.1'
+}
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+repositories {
+    maven{
+        name 'HKJ'
+        url 'http://192.168.0.102:9081/repository/HKJ_GROUP/'
+    }
+}

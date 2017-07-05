@@ -9,7 +9,7 @@ import java.util.List;
  * 当前对象所代表的是有可能单色，也有可能是组合色
  */
 @Entity
-@Table(name = "T_COMP_COLOR", catalog = "model_factory")
+@Table(name = "T_PART_COLOR", catalog = "model_factory")
 public class PartColor {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -19,9 +19,8 @@ public class PartColor {
     @Column(name = "PART_ID",nullable = false)
     private Long partId; //T_COMPONENT.id
 
-    //注意组合色与单色为互斥 ,如果为0代表多色件
     @Column(name = "COLOR_ID" ,nullable = false)
-    private Long colorId;//当前的颜色为单色T_Color.id
+    private Long colorId =0L;//当前的颜色为单色T_Color.id
 
     public Long getSid() {
         return sid;
@@ -46,4 +45,5 @@ public class PartColor {
     public void setColorId(Long colorId) {
         this.colorId = colorId;
     }
+
 }

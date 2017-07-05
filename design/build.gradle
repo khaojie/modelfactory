@@ -31,11 +31,12 @@ bootRepackage {
     mainClass = 'com.khaojie.design.Application'
 }
 dependencies {
-
     compile group:global_props.spring_boot_group,name:'spring-boot-starter-web',version:global_props.spring_boot_version
     compile group:global_props.spring_boot_group,name:'spring-boot-devtools',version:global_props.spring_boot_version
     compile group:global_props.spring_boot_group,name:'spring-boot-starter-redis',version:'1.4.6.RELEASE'
     compile group:global_props.spring_session_group,name:'spring-session',version:global_props.spring_session_version
+    compile group:global_props.spring_boot_group,name:'spring-boot-starter-data-jpa',version:global_props.spring_boot_version
+//    compile group:'com.mchange',name:'c3p0',version:'0.9.5.2'
     compile("org.springframework.boot:spring-boot-starter-thymeleaf:1.5.3.RELEASE")
     /**jsp support start**/
     /*compile("javax.servlet:jstl")
@@ -43,8 +44,8 @@ dependencies {
     compile("org.apache.tomcat.embed:tomcat-embed-jasper")
     compile("javax.servlet:javax.servlet-api")*/
     /**jsp support end**/
-//	compile project(':modelvo')
-//  compile project(':service')
+	compile project(':modelvo')
+    compile project(':service')
 //  testCompile group: 'junit', name: 'junit', version: '4.11'
 }
 
