@@ -1,0 +1,31 @@
+plugins{
+    id 'org.springframework.boot' version '1.5.3.RELEASE'
+    id 'java'
+    id 'maven'
+//    id 'war'
+}
+//version '1.0-SNAPSHOT'
+jar {
+    baseName = 'auth'
+    version =  '0.1'
+}
+
+targetCompatibility = 1.7
+sourceCompatibility = 1.7
+
+repositories {
+    mavenCentral()
+}
+
+/*springBoot {
+    mainClass = 'org.springframework.security.samples.HelloWorldApplication'
+}*/
+
+dependencies {
+    compile "org.springframework.boot:spring-boot-starter-web:1.5.3.RELEASE"
+    compile "org.springframework.boot:spring-boot-devtools:1.5.3.RELEASE"
+    compile "org.springframework.boot:spring-boot-starter-thymeleaf:1.5.3.RELEASE"
+    compile "org.springframework.boot:spring-boot-starter-security:1.5.3.RELEASE"
+    compile "org.thymeleaf.extras:thymeleaf-extras-springsecurity4:2.1.2.RELEASE"
+    compile 'org.springframework.security:spring-security-web:4.2.3.RELEASE'
+}
