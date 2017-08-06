@@ -27,10 +27,9 @@ import java.util.regex.Pattern;
  */
 @Controller
 @RequestMapping("/color")
-public class ColorController {
+public class ColorController extends BaseController {
     private Logger log = LoggerFactory.getLogger(ColorController.class);
-    @Autowired
-    private IColorService colorService;
+
 
     @RequestMapping(value="/main")
     public String invoiceApplyInit(HttpServletRequest req, Map<String,Object> model) throws Exception{

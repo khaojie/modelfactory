@@ -20,12 +20,9 @@ import java.util.Map;
  */
 @Controller
 @RequestMapping("/product")
-public class ProductController {
+public class ProductController extends BaseController{
 
     private Logger logger = LoggerFactory.getLogger(ProductController.class);
-
-    @Autowired
-    private IProductService productService;
 
     @RequestMapping(value="/queryProducts")
     public String queryProducts(ProductQueryItem queryItem, HttpServletRequest req, Map<String,Object> model) throws Exception{

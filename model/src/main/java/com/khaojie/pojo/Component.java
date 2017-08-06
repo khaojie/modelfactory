@@ -25,6 +25,9 @@ public class Component {
     @Column(name = "SEQ")
     private Integer seq;//对应产品中所处的组装顺序
 
+    @Column(name = "PROD_ID",nullable = false)
+    private Long prodId;
+
     public Long getId() {
         return id;
     }
@@ -56,5 +59,13 @@ public class Component {
 
     public void setSeq(Integer seq) {
         this.seq = seq;
+    }
+
+    public Long getProdId() {
+        return prodId;
+    }
+
+    public void setProdId(Long prodId) {
+        this.prodId = prodId;
     }
 }

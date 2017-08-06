@@ -1,9 +1,6 @@
 package com.khaojie.service.impl;
 
-import com.khaojie.repository.base.IColorDao;
-import com.khaojie.repository.base.IPartColorDao;
-import com.khaojie.repository.base.IPartDao;
-import com.khaojie.repository.base.IProductDao;
+import com.khaojie.repository.base.*;
 import com.khaojie.service.IBaseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -28,6 +25,14 @@ public class BaseService implements IBaseService {
     @Autowired
     protected IColorDao colorDao;
 
+
+    @Autowired
+    protected ICompPartDao compPartDao;
+
+
+    @Autowired
+    protected IComponentDao componentDao;
+
     @Override
     public IProductDao getProductDao() {
         return productDao;
@@ -46,5 +51,15 @@ public class BaseService implements IBaseService {
     @Override
     public IColorDao getColorDao() {
         return colorDao;
+    }
+
+    @Override
+    public ICompPartDao getCompPartDao() {
+        return compPartDao;
+    }
+
+    @Override
+    public IComponentDao getComponentDao() {
+        return componentDao;
     }
 }

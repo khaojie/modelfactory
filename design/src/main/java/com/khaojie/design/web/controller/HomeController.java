@@ -11,7 +11,7 @@ import java.util.Map;
  * Created by admin on 5/17/17.
  */
 @Controller
-public class HomeController {
+public class HomeController extends BaseController {
     @GetMapping("/")
     public String welcome(Map<String, Object> model) {
         return "main";

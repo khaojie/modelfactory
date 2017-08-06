@@ -74,8 +74,7 @@ public class PartService extends BaseService implements IPartService {
         }
         List<PartColor> partColors = new ArrayList<>();
         if(MyUtils.isNotEmpty(saveVo.getColors())){
-            List<String> colorCodelist = new ArrayList<>();
-            colorCodelist = Arrays.asList(saveVo.getColors().split(","));
+            List<String> colorCodelist = Arrays.asList(saveVo.getColors().split(","));
             List<Color> colors =colorDao.getListBySgCd(Condition.getConditions(new Condition("code",Operators.IN,colorCodelist)));
             if(colors.size()!=colorCodelist.size())
                 throw new IllegalAccessException("the color codes you input are not all matched with Color base data!");
@@ -128,11 +127,12 @@ public class PartService extends BaseService implements IPartService {
 
     @Override
     public PageInfo<PartVo> getPartVos(PartQueryItem queryItem){
-        PageInfo<Part> parts = partDao.getPageInfo(Condition.getConditions(new Condition("prodId", Operators.EQ,queryItem.getProdId())),1,1000);
-        Map<Long,String> partColorMaps = new HashMap<>();
-        if(parts.getTotalCount()>0L)
-            partColorMaps.putAll(getPartColors(MyUtils.getIds("id",parts.getDataList())));
+        PageInfo<Part> parts = partDao.getPageInfo(Condition.getConditions(new Condition("prodId", Operators.EQ,queryItem.getProdId())),1,2000);
+        if(parts.getTotalCount()==0L)
+            return new PageInfo(1,15,0L,new ArrayList<>());
 
+        Map<Long,String> partColorMaps = new HashMap<>();
+        partColorMaps.putAll(getPartColors(MyUtils.getIds("id",parts.getDataList())));
         PageInfo<PartVo> partss = new PageInfo<>(parts.getCurPage(),parts.getPageSize(),parts.getTotalCount(),new ArrayList<>());
         parts.getDataList().stream().forEach(part->{
             PartVo vo = new PartVo();

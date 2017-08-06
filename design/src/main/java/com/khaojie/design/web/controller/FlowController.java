@@ -12,7 +12,7 @@ import java.util.Map;
  */
 @Controller
 @RequestMapping("/flow")
-public class FlowController {
+public class FlowController extends BaseController {
 
     @RequestMapping(value="/main")
     public String main(HttpServletRequest req, Map<String,Object> model) throws Exception{
