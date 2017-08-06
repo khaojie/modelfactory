@@ -1,0 +1,14 @@
+<div class="panel panel-default" xmlns:th="http://www.thymeleaf.org">
+    <div class="panel-body">
+        <ul class="nav nav-tabs" id="flowMaintainTab">
+            <li class="active"><a href="#productFlowPanel" data-toggle="tab" style="">Products Mgt</a></li>
+            <li><a href="#partFlowPanel" data-toggle="tab">Parts Mgt</a></li>
+            <li><a href="#compFlowPanel" data-toggle="tab">Components Mgt</a></li>
+        </ul>
+        <div class="tab-content">
+            <div class="tab-pane fade in active" id="productFlowPanel" th:include="flow_cfg/product/main"></div>
+            <div class="tab-pane fade" id="partFlowPanel" th:include="flow_cfg/part/main"></div>
+            <div class="tab-pane fade" id="compFlowPanel" th:include="flow_cfg/comp/main"></div>
+        </div>
+    </div>
+</div>

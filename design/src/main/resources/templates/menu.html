@@ -2,24 +2,27 @@
     <ul id="rootMenuNode" class="nav nav-sidebar">
         <li>
             <a  href="#">
-                基础数据管理<span style="float:right;" class="glyphicon-chevron-right glyphicon"></span>
+                Base Data Management<span style="float:right;" class="glyphicon-chevron-right glyphicon"></span>
             </a>
             <ul class="nav nav-sidebar dropdown-menu" style="position: absolute; top: 0px; margin: 0px; width: 200px; right: -200px; left: auto; ">
                     <li>
-                        <a hassub="0" onclick="pageController.loadMenuPage('color/main','amenu_11_page',1,'漆色管理')"  href="#">
-                            漆色管理<span style="float:right;" class="glyphicon">&nbsp;</span>
+                        <a hassub="0" onclick="pageController.loadMenuPage('color/main','amenu_11_page',1,'Color Management')"  href="#">
+                            Color Management<span style="float:right;" class="glyphicon">&nbsp;</span>
                         </a>
                     </li>
-                    <li>
-                        <a hassub="0" onclick="pageController.loadMenuPage('cache/initCacheMaintain','amenu_12_page',1,'重置缓存')"  href="#">
-                            重置缓存<span style="float:right;" class="glyphicon">&nbsp;</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a hassub="0" onclick="pageController.loadMenuPage('bill/doTimer','amenu_13_page',1,'手动执行定时器')"  href="#">
-                            手动执行定时器<span style="float:right;" class="glyphicon">&nbsp;</span>
-                        </a>
-                    </li>
+            </ul>
+        </li>
+
+        <li>
+            <a href="#">
+                Business Management<span style="float:right;" class="glyphicon-chevron-right glyphicon"></span>
+            </a>
+            <ul class="nav nav-sidebar dropdown-menu" style="position: absolute; top: 0px; margin: 0px; width: 200px; right: -200px; left: auto; ">
+                <li>
+                    <a hassub="0" onclick="pageController.loadMenuPage('flow/main','amenu_12_page',1,'Flow Design')"  href="#">
+                        Flow Design<span style="float:right;" class="glyphicon">&nbsp;</span>
+                    </a>
+                </li>
             </ul>
         </li>
     </ul>

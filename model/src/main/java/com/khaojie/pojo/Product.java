@@ -18,6 +18,10 @@ public class Product {
     @Column(name = "PROD_NAME", length = 50,nullable = false)
     private String name;
 
+    @Version
+    @Column(name = "version")
+    private Integer version;
+
     public Long getId() {
         return id;
     }
@@ -34,4 +38,11 @@ public class Product {
         this.name = name;
     }
 
+    public Integer getVersion() {
+        return version;
+    }
+
+    public void setVersion(Integer version) {
+        this.version = version;
+    }
 }

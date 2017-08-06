@@ -1,0 +1,30 @@
+<div class="panel panel-default" xmlns:th="http://www.thymeleaf.org">
+    <div class="panel-body">
+        <ul class="nav nav-tabs" id="partMaintainTab">
+            <li class="active"><a href="#partMaintainSearchPanel" data-toggle="tab" style="">Parts List</a></li>
+            <li><a href="#partMaintainPanel" data-toggle="tab">Parts Maintain</a></li>
+        </ul>
+        <div class="tab-content">
+            <div class="tab-pane fade in active" id="partMaintainSearchPanel" th:include="flow_cfg/part/searchPanel"></div>
+            <div class="tab-pane fade" id="partMaintainPanel"></div>
+        </div>
+    </div>
+    <script type="text/javascript" th:src="@{/js/part/partCtl.js(timestamp=${#httpServletRequest.getAttribute('loginTimeStr')})}"></script>
+    <script  th:inline="javascript">
+        /*<![CDATA[*/
+        var partCtlParams=new Array();
+        partCtlParams.push('partMaintainTab');
+        partCtlParams.push('partMaintainPanel');
+        partCtlParams.push('partListTables');
+        partCtlParams.push('partMaintainPartNos');
+        partCtlParams.push('partMaintainProdId');
+        partCtlParams.push('partMaintainPartId');
+        partCtlParams.push('partMaintainBoardNo');
+        partCtlParams.push('partMaintainPartNumber');
+        partCtlParams.push('partMaintainPartName');
+        partCtlParams.push('partMaintainPartColors');
+        partCtlParams.push('partMaintainNote');
+        var partCtl = new PartCtl(partCtlParams);
+        /*]]>*/
+    </script>
+</div>

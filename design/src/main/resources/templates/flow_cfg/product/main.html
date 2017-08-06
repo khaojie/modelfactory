@@ -1,0 +1,31 @@
+<div class="panel panel-default" xmlns:th="http://www.thymeleaf.org">
+    <div class="panel-body">
+        <ul class="nav nav-tabs" id="productMaintainTab">
+            <li class="active">
+                <a href="#productMaintainSearchPanel" data-toggle="tab" style="">Product List</a>
+            </li>
+            <li>
+                <a href="#productMaintainPanel" data-toggle="tab">Product Maintain</a>
+            </li>
+        </ul>
+        <div class="tab-content">
+            <div class="tab-pane fade in active" id="productMaintainSearchPanel" th:include="flow_cfg/product/searchPanel"></div>
+            <div class="tab-pane fade" id="productMaintainPanel" ></div>
+        </div>
+    </div>
+    <script type="text/javascript" th:src="@{/js/prod/productCtl.js(timestamp=${#httpServletRequest.getAttribute('loginTimeStr')})}"></script>
+    <script  th:inline="javascript">
+        /*<![CDATA[*/
+        var productCtlParams=new Array();
+        productCtlParams.push('productNameQueryTxt');
+        productCtlParams.push('productQuerybtn');
+        productCtlParams.push('productListTables');
+        productCtlParams.push('productMaintainTab');
+        productCtlParams.push('productMaintainPanel');
+        productCtlParams.push('prodMaintainProdId');
+        productCtlParams.push('prodMaintainProdName');
+        productCtlParams.push('prodMaintainVersion');
+        var productCtl = new ProductCtl(productCtlParams);
+        /*]]>*/
+    </script>
+</div>

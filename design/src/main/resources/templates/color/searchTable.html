@@ -13,12 +13,12 @@
             <td th:text="${color.colorName}"></td>
             <td th:text="${color.mixFormula}"></td>
             <td>
-                <button type="button" class="btn btn-warn btn-sm"  data-loading-text="正在加载" onclick="">
-                    修改
+                <button type="button" class="btn btn-warning btn-sm"  data-loading-text="loading now..." th:onclick="'javascript:colorCtl.loadMaintainPanel(\''+${color.id}+'\',this)'">
+                    <span class="glyphicon glyphicon-edit"/>&nbsp;Modify
                 </button>
                 &nbsp;
                 <button type="button" class="btn btn-danger btn-sm"  data-loading-text="正在加载" onclick="">
-                    删除
+                    <span class="glyphicon glyphicon-remove"/>&nbsp;Disable
                 </button>
             </td>
         </tr>

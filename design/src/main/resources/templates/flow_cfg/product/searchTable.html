@@ -1,0 +1,42 @@
+<table id="productListTable" class="table table-striped table-bordered table-hover" xmlns:th="http://www.thymeleaf.org">
+    <thead>
+    <tr class="info">
+        <th>Product Name</th>
+        <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody th:if="${data ne null and not #lists.isEmpty(data.dataList)}">
+        <tr th:each="prod : ${data.dataList}">
+            <td th:text="${prod.name}"></td>
+            <td>
+                <button type="button" class="btn btn-warning btn-sm"  data-loading-text="loading now..." th:onclick="'javascript:productCtl.loadMaintainPanel(\''+${prod.id}+'\',this)'">
+                    <span class="glyphicon glyphicon-edit"/>&nbsp;Modify
+                </button>
+                &nbsp;
+                <button type="button" class="btn btn-success btn-sm"  data-loading-text="loading now..." th:onclick="'javascript:productCtl.loadFlowSettings(\''+${prod.id}+'\',this)'">
+                    <span class="glyphicon glyphicon-list"/>&nbsp;Load Flow Settings
+                </button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<script  xmlns:th="http://www.thymeleaf.org" th:inline="javascript">
+    /*<![CDATA[*/
+    $('#productListTable').on('click', 'tbody tr', function(event) {
+        $(this).addClass('highlight').siblings().removeClass('highlight');
+    });
+    /*]]>*/
+</script>
+<!-- pager start -->
+<!--<c:if test="${empty error && !empty data.dataList}">-->
+    <!--<jsp:include page="/WEB-INF/jsp/common/page.jsp" flush="true" />-->
+    <!--<form action="${baseUrl}appcomp/queryAppComp" class="active" method="post" id="pageForm">-->
+        <!--<input type="hidden" name="curPage" value="${data.curPage}" id="curPage"/>-->
+        <!--<input type="hidden" name="pageSize" value="${data.pageSize}" id="pageSize"/> <%&#45;&#45;实现点击每页显示条数切换 必须加入pageSize&#45;&#45;%>-->
+        <!--<c:if test="${!empty queryParameter}">-->
+            <!--<c:forEach items="${queryParameter}" var="com" varStatus="st">-->
+                <!--<input type="hidden" name="${com.key}" value="${com.value}"/>-->
+            <!--</c:forEach>-->
+        <!--</c:if>-->
+    <!--</form>-->
+<!--</c:if>-->

@@ -25,14 +25,13 @@ public class Part {
     @Column(name = "PART_NUMBER",nullable = false)
     private Integer number;
 
-    @Column(name = "PART_NAME",length = 50,nullable = false)
+    @Column(name = "PART_NAME",length = 50)
     private String name;
 
-    @Column(name = "NOTE",length = 500,nullable = false)
+    @Column(name = "NOTE",length = 500)
     private String note;
 
 
-    private Integer needPrePaint =1;
     public Long getId() {
         return id;
     }
@@ -81,11 +80,4 @@ public class Part {
         this.note = note;
     }
 
-    public Integer getNeedPrePaint() {
-        return needPrePaint;
-    }
-
-    public void setNeedPrePaint(Integer needPrePaint) {
-        this.needPrePaint = needPrePaint;
-    }
 }

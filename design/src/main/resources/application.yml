@@ -9,7 +9,7 @@ spring:
   thymeleaf:
     cache: false
   profiles:
-    active: dev
+    active: '@profileActive@'
 
 extraProp:
       loginTimeStr: 201705041530

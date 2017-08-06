@@ -26,8 +26,6 @@ public class Color {
     @Column(name = "BRANCH", nullable = false)
     private Integer branch = 0 ;
 
-    @Column(name = "UU_ID",length = 50)
-    private String uuid;
 
     public Long getId() {
         return id;
@@ -69,11 +67,4 @@ public class Color {
         this.branch = branch;
     }
 
-    public String getUuid() {
-        return uuid;
-    }
-
-    public void setUuid(String uuid) {
-        this.uuid = uuid;
-    }
 }

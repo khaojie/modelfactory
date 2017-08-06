@@ -1,1 +1,24 @@
-<div class="panel panel-default">我是MaintainPanel</div>
+<div class="panel panel-default" xmlns:th="http://www.thymeleaf.org">
+    <div class="panel-body">
+        <span style="display: none;">
+            <input type="hidden" id="colorMaintainColorId" th:value="${color.id}"/>
+        </span>
+        <div>
+            <label>Color Name:</label>
+            <input type="text" id="colorMaintainColorName" th:value="${color.colorName}" style="margin-right: 10px;"/>
+            <label>Color Code:</label>
+            <input type="text" id="colorMaintainColorCode" th:value="${color.code}" style="margin-right: 10px;"/>
+            <label>Mix Formula:</label>
+            <input type="text" id="colorMaintainColorMixFormula" th:value="${color.mixFormula}" style="margin-right: 10px;"/>
+            <label>Branch:</label>
+            <select id="colorMaintainColorBranchSelect">
+                <option value="1">郡士环保漆N系</option>
+            </select>
+        </div>
+
+
+        <button type="button" class="btn btn-primary btn-sm" id="colorSavebtn" data-loading-text="in processing now..." onclick="colorCtl.saveColors(this)">
+            <span class="glyphicon glyphicon-save"></span> Save
+        </button>
+    </div>
+</div>

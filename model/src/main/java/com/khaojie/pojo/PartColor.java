@@ -17,7 +17,7 @@ public class PartColor {
     private Long sid;
 
     @Column(name = "PART_ID",nullable = false)
-    private Long partId; //T_COMPONENT.id
+    private Long partId;
 
     @Column(name = "COLOR_ID" ,nullable = false)
     private Long colorId =0L;//当前的颜色为单色T_Color.id

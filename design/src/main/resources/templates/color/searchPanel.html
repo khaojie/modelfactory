@@ -1,24 +1,29 @@
 <div class="panel panel-default" xmlns:th="http://www.thymeleaf.org">
     <div class="panel-body">
         <span>
-            <label>品牌:</label>
+            <label>Branch:</label>
            <select id="colorBranchSelect">
                 <option value="1">郡士环保漆N系</option>
             </select>
         </span>
         <span>
-            <label>颜色名称:</label>
+            <label>Color Name:</label>
             <input type="text" id="colorNameTxt" placeholder=""/>
         </span>
         <span>
-            <label>色号:</label>
+            <label>Color Code:</label>
             <input type="text" id="colorNumberTxt" placeholder=""/>
         </span>
         <span>
-          <button type="button" class="btn btn-info btn-sm" id="colorQuerybtn" data-loading-text="正在查询" onclick="">
-              <span class="glyphicon glyphicon-search"></span> 查询
+          <button type="button" class="btn btn-info btn-sm" id="colorQuerybtn" data-loading-text="finding now" onclick="colorCtl.queryColors()">
+              <span class="glyphicon glyphicon-search"></span> Query
           </button>
       </span>
+        <span>
+          <button type="button" class="btn btn-warning btn-sm" id="colorAddbtn" data-loading-text="loading maintain panel..." onclick="colorCtl.loadMaintainPanel(0,this)">
+              <span class="glyphicon glyphicon-file"></span> Create Color
+          </button>
+        </span>
     </div>
     <div style="margin-top: 5px;" id="colorListTables" th:include="color/searchTable"></div>
 </div>

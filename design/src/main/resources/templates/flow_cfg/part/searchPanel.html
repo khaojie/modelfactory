@@ -1,0 +1,19 @@
+<div class="panel panel-default" xmlns:th="http://www.thymeleaf.org">
+    <div class="panel-body">
+
+    </div>
+    <div class="panel-body">
+        <label>Part Nos:</label>
+        <input type="text" id="partMaintainPartNos" style="width: 300px;" placeholder="format:A1,A2,A3 or A1-A17 or A1"/>
+        <button type="button" class="btn btn-primary btn-sm" id="partQuickSavebtn" data-loading-text="in processing now..."
+                onclick="partCtl.quickSave(this)">
+            <span class="glyphicon glyphicon-save"></span> Quick Create
+        </button>
+        &nbsp;
+        <button type="button" class="btn btn-warning btn-sm" id="partCreatebtn" data-loading-text="in processing now..."
+                onclick="javascript:partCtl.loadMaintainPanel(0,partCtl.mainProdId,this)">
+            <span class="glyphicon glyphicon-save"></span> Create Single Part
+        </button>
+    </div>
+    <div style="margin-top: 5px;" id="partListTables" th:include="flow_cfg/part/searchTable"></div>
+</div>

@@ -1,0 +1,13 @@
+<div class="panel panel-default" xmlns:th="http://www.thymeleaf.org">
+    <div class="panel-body">
+        <span style="display: none;">
+            <input type="hidden" id="prodMaintainProdId" th:value="${prod.id}"/>
+            <input type="hidden" id="prodMaintainVersion" th:value="${prod.version}"/>
+        </span>
+        <label>Prod Name:</label>
+        <input type="text" id="prodMaintainProdName" th:value="${prod.name}"/>
+        <button type="button" class="btn btn-primary btn-sm" id="productSavebtn" data-loading-text="in processing now..." onclick="productCtl.saveProd(this)">
+            <span class="glyphicon glyphicon-save"></span> Save
+        </button>
+    </div>
+</div>

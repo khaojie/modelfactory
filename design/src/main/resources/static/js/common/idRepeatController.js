@@ -87,7 +87,7 @@ if(typeof (idRepeatController) == 'undefined'){
                idList1.push($(this).attr('id'));
            });
            this.detectPageRepeatId(pageId,idList1);
-           this.showRepeatIds();
+           // this.showRepeatIds();
        },
        showRepeatIds:function(){
            if(this.blackList.length<1) return;

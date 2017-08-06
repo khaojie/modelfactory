@@ -11,12 +11,13 @@ import java.util.List;
  */
 public class ProdColorStatistics {
 
-    public ProdColorStatistics(Color color){
-        this.color = color;
-    }
     private Color color;
 
     private List<Part> parts = new ArrayList<>();
+
+    public ProdColorStatistics(Color color){
+        this.color = color;
+    }
 
     public Color getColor() {
         return color;

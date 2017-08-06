@@ -40,6 +40,10 @@
             userController.globalAjaxSetUp();
             $.ajaxSetup({cache:false});
         });
+        window.onresize = function () {
+            if(typeof(pageController) != "undefined")
+                pageController.initDivMainWidth();
+        }
         function buildMenu() {
             var root = document.getElementById("rootMenuNode");
             var uls = root.getElementsByTagName("ul");

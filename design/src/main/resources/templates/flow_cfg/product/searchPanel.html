@@ -1,0 +1,19 @@
+<div class="panel panel-default" xmlns:th="http://www.thymeleaf.org">
+    <div class="panel-body">
+        <span>
+            <label style="color: red;">Product Name(Like):</label>
+            <input type="text" id="productNameQueryTxt"/>
+        </span>
+        <span>
+          <button type="button" class="btn btn-info btn-sm" id="productQuerybtn" data-loading-text="finding now.." onclick="productCtl.queryProducts()">
+              <span class="glyphicon glyphicon-search"></span> Query
+          </button>
+        </span>
+        <span>
+          <button type="button" class="btn btn-warning btn-sm" id="productAddbtn" data-loading-text="loading maintain panel..." onclick="productCtl.loadMaintainPanel(0,this)">
+              <span class="glyphicon glyphicon-file"></span> Create Product
+          </button>
+        </span>
+    </div>
+  <div class="panel-body" style="margin-top: 5px;" id="productListTables" th:include="flow_cfg/product/searchTable"></div>
+</div>

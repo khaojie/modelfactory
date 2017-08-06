@@ -41,6 +41,12 @@ function validatePrice(obj) {
 		return false;
 	return true;
 };
+function getValById(id){
+	return $("#"+id).val();
+}
+function getTextById(id){
+    return $("#"+id).html();
+}
 //判断对象或值是否为空
 function isNotEmpty(val) {
 	if (val == null || val === '' || typeof (val) == 'undefined' || $.trim(val)==='')

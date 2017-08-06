@@ -24,19 +24,6 @@ public class PermissionInterceptor extends HandlerInterceptorAdapter {
     public boolean preHandle(HttpServletRequest request,
                              HttpServletResponse response, Object handler) throws Exception {
         request.getSession().setAttribute("loginTimeStr", loginTimeStr);
-//        if (request.getHeader("x-requested-with") != null && request.getHeader("x-requested-with").equalsIgnoreCase("XMLHttpRequest")) { //如果是ajax请求响应头会有x-requested-with
-//            LoginInfo e = (LoginInfo) request.getSession().getAttribute("current_ssologin_user");
-//            if (e == null) {//session已经失效
-//                response.setHeader("sessionstatus", "timeout"); //设置失效标志
-//                if (!request.getRequestURI().equals("/callcenter/user/reLogin")) {   //如果在登录失效的情况下不是访问重新登录界面则驳回
-//                    return false;
-//                }
-//            } else {//session未失效
-//                if ("timeout".equals(response.getHeader("sessionstatus"))) {
-//                    response.setHeader("sessionstatus", "");
-//                }
-//            }
-//        }
         return true;
     }
 }

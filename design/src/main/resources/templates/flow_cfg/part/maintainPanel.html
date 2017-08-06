@@ -1,0 +1,38 @@
+<div class="row" xmlns:th="http://www.thymeleaf.org">
+    <div class="panel-body">
+        <span style="display: none;">
+            <input type="hidden" id="partMaintainPartId" th:value="${vo.part.id}"/>
+            <input type="hidden" id="partMaintainProdId" th:value="${vo.part.prodId}"/>
+
+        </span>
+        <div style="width: 100%; text-align: center;">
+            <div style="width: 100%;">
+                <label style="width: 200px; text-align: left;">Board No:</label>
+                <input type="text" id="partMaintainBoardNo" th:value="${vo.part.boardNo}" style="margin-right: 10px;"/>
+            </div>
+            <div style="width: 100%;">
+                <label style="width: 200px; text-align: left;">Part Number:</label>
+                <input type="text" id="partMaintainPartNumber" th:value="${vo.part.number}" style="margin-right: 10px;"/>
+            </div>
+            <div style="width: 100%;">
+                <label style="width: 200px; text-align: left;">Part Name:</label>
+                <input type="text" id="partMaintainPartName" th:value="${vo.part.name}" style="margin-right: 10px;"/>
+            </div>
+            <div style="width: 100%;">
+                <label style="width: 200px; text-align: left;">Part Colors:</label>
+                <input type="text" id="partMaintainPartColors" th:value="${vo.colors}" style="margin-right: 10px;"/>
+            </div>
+            <div style="width: 100%;">
+                <label style="width: 200px; text-align: left; vertical-align: top;">Note:</label>
+                <textarea id="partMaintainNote" rows="3" th:value="${vo.part.note}" style="margin-right: 22px;"></textarea>
+            </div>
+            <div style="width: 100%;">
+                <button type="button" class="btn btn-primary btn-sm" id="partSavebtn" data-loading-text="in processing now..." onclick="partCtl.save(this)">
+                    <span class="glyphicon glyphicon-save"></span> Save
+                </button>
+            </div>
+        </div>
+
+
+    </div>
+</div>

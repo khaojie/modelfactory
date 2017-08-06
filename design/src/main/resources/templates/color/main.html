@@ -1,12 +1,31 @@
 <div class="panel panel-default" xmlns:th="http://www.thymeleaf.org">
     <div class="panel-body">
         <ul class="nav nav-tabs" id="colorMaintainTab">
-            <li class="active"><a href="#colorMaintainSearchPanel" data-toggle="tab" style="">漆色列表</a></li>
-            <li><a href="#colorMaintainPanel" data-toggle="tab">漆色维护</a></li>
+            <li class="active"><a href="#colorMaintainSearchPanel" data-toggle="tab" style="">Color List</a></li>
+            <li><a href="#colorMaintainPanel" id="colorMaintainPanelTab" data-toggle="tab">Color Maintain</a></li>
         </ul>
         <div class="tab-content">
             <div class="tab-pane fade in active" id="colorMaintainSearchPanel" th:include="color/searchPanel"></div>
-            <div class="tab-pane fade" id="colorMaintainPanel" th:include="color/maintainPanel"></div>
+            <div class="tab-pane fade" id="colorMaintainPanel"></div>
         </div>
     </div>
+    <script type="text/javascript" th:src="@{/js/color/colorCtl.js(timestamp=${#httpServletRequest.getAttribute('loginTimeStr')})}"></script>
+    <script  th:inline="javascript">
+        /*<![CDATA[*/
+        var colorCtlParams=new Array();
+        colorCtlParams.push('colorBranchSelect');
+        colorCtlParams.push('colorNameTxt');
+        colorCtlParams.push('colorNumberTxt');
+        colorCtlParams.push('colorQuerybtn');
+        colorCtlParams.push('colorListTables');
+        colorCtlParams.push('colorMaintainPanel');
+        colorCtlParams.push('colorMaintainPanelTab');
+        colorCtlParams.push('colorMaintainColorId');
+        colorCtlParams.push('colorMaintainColorName');
+        colorCtlParams.push('colorMaintainColorCode');
+        colorCtlParams.push('colorMaintainColorMixFormula');
+        colorCtlParams.push('colorMaintainColorBranchSelect');
+        var colorCtl = new ColorCtl(colorCtlParams);
+        /*]]>*/
+    </script>
 </div>
