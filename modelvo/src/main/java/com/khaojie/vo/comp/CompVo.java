@@ -9,7 +9,8 @@ import java.util.List;
 
 public class CompVo {
     private Component comp;
-    private List<PartVo> parts = new ArrayList<>();
+
+    private String parts ="";
 
     public Component getComp() {
         return comp;
@@ -19,11 +20,11 @@ public class CompVo {
         this.comp = comp;
     }
 
-    public List<PartVo> getParts() {
+    public String getParts() {
         return parts;
     }
 
-    public void setParts(List<PartVo> parts) {
+    public void setParts(String parts) {
         this.parts = parts;
     }
 

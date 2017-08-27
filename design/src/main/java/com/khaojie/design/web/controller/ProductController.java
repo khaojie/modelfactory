@@ -27,7 +27,7 @@ public class ProductController extends BaseController{
     @RequestMapping(value="/queryProducts")
     public String queryProducts(ProductQueryItem queryItem, HttpServletRequest req, Map<String,Object> model) throws Exception{
         model.put("data",productService.getProductsPageInfo(queryItem));
-        return "flow_cfg/product/searchTable";
+        return queryItem.getSearchTable();
     }
 
     @RequestMapping(value = "/loadMaintainInfo/{prodId}")

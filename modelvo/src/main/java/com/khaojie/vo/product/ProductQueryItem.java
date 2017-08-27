@@ -14,6 +14,8 @@ public class ProductQueryItem {
 
     private String prodName;
 
+    private String searchTable;
+
     private Integer curPage;
 
     private Integer pageSize;
@@ -32,5 +34,13 @@ public class ProductQueryItem {
 
     public void setPageSize(Integer pageSize) {
         this.pageSize = pageSize;
+    }
+
+    public String getSearchTable() {
+        return searchTable;
+    }
+
+    public void setSearchTable(String searchTable) {
+        this.searchTable = searchTable;
     }
 }

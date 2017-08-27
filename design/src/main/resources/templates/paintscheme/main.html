@@ -1,0 +1,33 @@
+<div class="panel panel-default" xmlns:th="http://www.thymeleaf.org">
+    <div class="panel-body">
+        <ul class="nav nav-tabs" id="paintSchemeTab">
+            <li class="active">
+                <a href="#paintSchemeSearchPanel" data-toggle="tab" style="">Product List</a>
+            </li>
+            <li>
+                <a href="#paintSchemeDetailPanel" data-toggle="tab">Scheme Details</a>
+            </li>
+        </ul>
+        <div class="tab-content">
+            <div class="tab-pane fade in active" id="paintSchemeSearchPanel" th:include="paintscheme/searchPanel"></div>
+            <div class="tab-pane fade" id="paintSchemeDetailPanel" ></div>
+        </div>
+    </div>
+    <script type="text/javascript" th:src="@{/js/prod/productCtl.js(timestamp=${#httpServletRequest.getAttribute('loginTimeStr')})}"></script>
+    <script type="text/javascript" th:src="@{/js/paintscheme/paintSchemeCtl.js(timestamp=${#httpServletRequest.getAttribute('loginTimeStr')})}"></script>
+    <script  th:inline="javascript">
+        /*<![CDATA[*/
+        var productCtlParams1=new Array();
+        productCtlParams1.push('productNameQueryTxt1');
+        productCtlParams1.push('productQuerybtn1');
+        productCtlParams1.push('productListTables1');
+        productCtlParams1.push('paintSchemeTab');
+        productCtlParams1.push('paintSchemeDetailPanel');
+        productCtlParams1.push('prodMaintainProdId1');
+        productCtlParams1.push('');
+        productCtlParams1.push('');
+        productCtlParams1.push('paintscheme/searchTable');
+        var productCtl1 = new ProductCtl(productCtlParams1);
+        /*]]>*/
+    </script>
+</div>

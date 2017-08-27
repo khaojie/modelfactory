@@ -40,7 +40,7 @@ public class ColorTalentService implements IColorTalentService {
         Map<Long,Part> partMap = new HashMap<>();
         parts.stream().forEach(en->{partMap.put(en.getId(),en);});
         List<Long> partIds = MyUtils.getIds("id",parts);
-        List<PartColor> partColors = partColorDao.getListBySgCd(Condition.getConditions(new Condition("partId",Operators.IN,partIds)),"colorId");
+        List<PartColor> partColors = partColorDao.getListByCondition(Condition.getConditions(new Condition("partId",Operators.IN,partIds)));
         Map<Long,ProdColorStatistics> map = new HashMap<>();
         for(PartColor pc:partColors){
             Long colorId = pc.getColorId();
@@ -50,6 +50,7 @@ public class ColorTalentService implements IColorTalentService {
                 ps = new ProdColorStatistics(color);
             }
             ps.addPart(partMap.get(pc.getPartId()));
+            map.put(colorId,ps);
         }
         return new ArrayList<>(map.values());
     }

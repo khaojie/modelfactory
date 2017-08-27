@@ -16,6 +16,7 @@ function ProductCtl(productCtlParams){
     this.prodMaintainProdId = productCtlParams[5];
     this.prodMaintainProdName = productCtlParams[6];
     this.prodMaintainVersion =productCtlParams[7];
+    this.prodSearchTable = productCtlParams[8];
 }
 /**
  * 查询商品
@@ -27,6 +28,7 @@ ProductCtl.prototype.queryProducts=function(){
     if(isNotEmpty(prodNameStr)){
         queryObj.prodName = prodNameStr;
     }
+    queryObj.searchTable = instance.prodSearchTable;
     var queryBtn = $("#"+this.btn_query);
     $(queryBtn).button('loading');
     $.ajax({
@@ -105,6 +107,10 @@ ProductCtl.prototype.loadFlowSettings = function(prodId,btn) {
     if(isNotEmpty(partCtl)){
         partCtl.queryParts(prodId);
         partCtl.mainProdId = prodId;
+    }
+    if(isNotEmpty(compCtl)){
+        compCtl.queryComps(prodId);
+        compCtl.mainProdId = prodId;
     }
 
 };

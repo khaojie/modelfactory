@@ -25,6 +25,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 @Service
 public class ComponentService extends BaseService implements IComponentService{
@@ -103,8 +104,21 @@ public class ComponentService extends BaseService implements IComponentService{
         comps.getDataList().stream().forEach(comp->{
             CompVo compVo = new CompVo();
             compVo.setComp(comp);
-            compVo.setParts(compPartVos.get(comp.getId()));
+            List<PartVo> partVos = compPartVos.get(comp.getId());
+            partVos.stream().forEach(partVo -> {
+                compVo.setParts(compVo.getParts()+","+partVo.getNo());
+            });
+            compVo.setParts(compVo.getParts().replaceFirst(",",""));
+            compVos.getDataList().add(compVo);
         });
         return compVos;
+    }
+
+    public static void main(String[] args) {
+        List<String> list = new ArrayList<>();
+        list.add("11");list.add("22");list.add("33");
+        list.stream().collect(
+            Collectors.joining(",")
+        );
     }
 }

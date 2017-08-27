@@ -1,31 +1,25 @@
-<table id="compListTable" class="table table-striped table-bordered table-hover" xmlns:th="http://www.thymeleaf.org">
+<table id="productListTable1" class="table table-striped table-bordered table-hover" xmlns:th="http://www.thymeleaf.org">
     <thead>
     <tr class="info">
-        <th>Component Name</th>
-        <th>Note</th>
-        <th>Sequence</th>
-        <th>Parts</th>
+        <th>Product Name</th>
         <th>Actions</th>
     </tr>
     </thead>
     <tbody th:if="${data ne null and not #lists.isEmpty(data.dataList)}">
-    <tr th:each="pt : ${data.dataList}">
-        <td th:text="${pt.comp.compName}"></td>
-        <td th:text="${pt.comp.note}"></td>
-        <td th:text="${pt.comp.seq}"></td>
-        <td th:text="${pt.parts}"></td>
-        <td>
-            <button type="button" class="btn btn-warning btn-sm"  data-loading-text="loading now..." th:onclick="'javascript:compCtl.loadMaintainPanel(\''+${pt.comp.id}+'\',\''+${pt.comp.prodId}+'\',this)'">
-                <span class="glyphicon glyphicon-edit"/>&nbsp;Modify
-            </button>
-            &nbsp;
-        </td>
-    </tr>
+        <tr th:each="prod : ${data.dataList}">
+            <td th:text="${prod.name}"></td>
+            <td>
+                <button type="button" class="btn btn-warning btn-sm"  data-loading-text="loading now..."
+                        th:onclick="'javascript:paintSchemeCtl.loadDetail(\''+${prod.id}+'\',this)'">
+                    <span class="glyphicon glyphicon-download"/>&nbsp;download Scheme
+                </button>
+            </td>
+        </tr>
     </tbody>
 </table>
 <script  xmlns:th="http://www.thymeleaf.org" th:inline="javascript">
     /*<![CDATA[*/
-    $('#compListTable').on('click', 'tbody tr', function(event) {
+    $('#productListTable1').on('click', 'tbody tr', function(event) {
         $(this).addClass('highlight').siblings().removeClass('highlight');
     });
     /*]]>*/

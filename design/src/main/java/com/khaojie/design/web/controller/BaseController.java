@@ -1,9 +1,6 @@
 package com.khaojie.design.web.controller;
 
-import com.khaojie.service.IColorService;
-import com.khaojie.service.IComponentService;
-import com.khaojie.service.IPartService;
-import com.khaojie.service.IProductService;
+import com.khaojie.service.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,4 +18,6 @@ public class BaseController {
     protected IPartService partService;
     @Autowired
     protected IProductService productService;
+    @Autowired
+    protected IColorTalentService colorTalentService;
 }

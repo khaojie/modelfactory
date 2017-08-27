@@ -1,0 +1,17 @@
+<div class="panel panel-default" xmlns:th="http://www.thymeleaf.org">
+    <div class="panel-body">
+        <span>
+            <label style="color: red;">Product Name(Like):</label>
+            <input type="text" id="productNameQueryTxt1"/>
+        </span>
+        <span>
+          <button type="button" class="btn btn-info btn-sm" id="productQuerybtn1" data-loading-text="finding now.." onclick="productCtl1.queryProducts()">
+              <span class="glyphicon glyphicon-search"></span> Query
+          </button>
+        </span>
+    </div>
+  <div class="panel-body" style="margin-top: 5px;" id="productListTables1" th:include="paintscheme/searchTable"></div>
+    <form id="paintSchemeForm">
+        <input type="hidden" name="paintSchemeParameter" id="paintSchemeParameter"/>
+    </form>
+</div>

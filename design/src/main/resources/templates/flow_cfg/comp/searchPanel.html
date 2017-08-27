@@ -1,15 +1,13 @@
 <div class="panel panel-default" xmlns:th="http://www.thymeleaf.org">
     <div class="panel-body">
-        <!--<span>-->
-            <!--<input type="text" id=""/>-->
-        <!--</span>-->
-        <!--<span>-->
-          <!--<button type="button" class="btn btn-info btn-sm" id="colorQuerybtn" data-loading-text="正在查询" onclick="">-->
-              <!--<span class="glyphicon glyphicon-search"></span> 查询-->
-          <!--</button>-->
-        <!--</span>-->
-    </div>
 
+    </div>
+    <div class="panel-body">
+        <button type="button" class="btn btn-warning btn-sm" id="compCreatebtn" data-loading-text="in processing now..."
+                onclick="javascript:compCtl.loadMaintainPanel(0,compCtl.mainProdId,this)">
+            <span class="glyphicon glyphicon-save"></span> Create Single Component
+        </button>
+    </div>
 
   <div style="margin-top: 5px;" id="compListTables" th:include="flow_cfg/comp/searchTable"></div>
 </div>

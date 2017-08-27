@@ -15,3 +15,7 @@ repositories {
         url 'http://192.168.0.102:9081/repository/HKJ_GROUP/'
     }
 }
+dependencies{
+    compile("org.apache.poi:poi-ooxml:3.14")
+    compile("org.apache.poi:poi:3.14")
+}

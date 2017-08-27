@@ -1,3 +1,34 @@
 <div class="row" xmlns:th="http://www.thymeleaf.org">
+    <div class="panel-body">
+        <span style="display: none;">
+            <input type="hidden" id="compMaintainCompId" th:value="${vo.comp.id}"/>
+            <input type="hidden" id="compMaintainProdId" th:value="${vo.comp.prodId}"/>
 
+        </span>
+        <div style="width: 100%; text-align: center;">
+            <div style="width: 100%;">
+                <label style="width: 200px; text-align: left;">Component Name:</label>
+                <input type="text" id="compMaintainCompName" th:value="${vo.comp.compName}" style="margin-right: 10px;"/>
+            </div>
+            <div style="width: 100%;">
+                <label style="width: 200px; text-align: left;">Component Seq:</label>
+                <input type="text" id="compMaintainSeq" th:value="${vo.comp.seq}" style="margin-right: 10px;"/>
+            </div>
+            <div style="width: 100%;">
+                <label style="width: 200px; text-align: left;">Parts:</label>
+                <input type="text" id="compMaintainParts" th:value="${vo.parts}" placeholder="eg:A1,A2,A3" style="margin-right: 10px;"/>
+            </div>
+            <div style="width: 100%;">
+                <label style="width: 200px; text-align: left; vertical-align: top;">Note:</label>
+                <textarea id="compMaintainNote" rows="3" th:text="${vo.comp.note}" style="margin-right: 22px;"></textarea>
+            </div>
+            <div style="width: 100%;">
+                <button type="button" class="btn btn-primary btn-sm" id="compSavebtn" data-loading-text="in processing now..." onclick="compCtl.save(this)">
+                    <span class="glyphicon glyphicon-save"></span> Save
+                </button>
+            </div>
+        </div>
+
+
+    </div>
 </div>

@@ -2,11 +2,27 @@
     <div class="panel-body">
         <ul class="nav nav-tabs" id="compMaintainTab">
             <li class="active"><a href="#compMaintainSearchPanel" data-toggle="tab" style="">Components List</a></li>
-            <li><a href="#comptMaintainPanel" data-toggle="tab">Components Maintain</a></li>
+            <li><a href="#compMaintainPanel" data-toggle="tab">Components Maintain</a></li>
         </ul>
         <div class="tab-content">
             <div class="tab-pane fade in active" id="compMaintainSearchPanel" th:include="flow_cfg/comp/searchPanel"></div>
-            <div class="tab-pane fade" id="comptMaintainPanel" th:include="flow_cfg/comp/maintainPanel"></div>
+            <div class="tab-pane fade" id="compMaintainPanel"></div>
         </div>
     </div>
+    <script type="text/javascript" th:src="@{/js/comp/compCtl.js(timestamp=${#httpServletRequest.getAttribute('loginTimeStr')})}"></script>
+    <script  th:inline="javascript">
+        /*<![CDATA[*/
+        var compCtlParams=new Array();
+        compCtlParams.push('compMaintainTab');
+        compCtlParams.push('compMaintainPanel');
+        compCtlParams.push('compListTables');
+        compCtlParams.push('compMaintainCompId');
+        compCtlParams.push('compMaintainProdId');
+        compCtlParams.push('compMaintainCompName');
+        compCtlParams.push('compMaintainSeq');
+        compCtlParams.push('compMaintainParts');
+        compCtlParams.push('compMaintainNote');
+        var compCtl = new CompCtl(compCtlParams);
+        /*]]>*/
+    </script>
 </div>

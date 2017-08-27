@@ -24,7 +24,7 @@
             </div>
             <div style="width: 100%;">
                 <label style="width: 200px; text-align: left; vertical-align: top;">Note:</label>
-                <textarea id="partMaintainNote" rows="3" th:value="${vo.part.note}" style="margin-right: 22px;"></textarea>
+                <textarea id="partMaintainNote" rows="3" th:text="${vo.part.note}" style="margin-right: 22px;"></textarea>
             </div>
             <div style="width: 100%;">
                 <button type="button" class="btn btn-primary btn-sm" id="partSavebtn" data-loading-text="in processing now..." onclick="partCtl.save(this)">
