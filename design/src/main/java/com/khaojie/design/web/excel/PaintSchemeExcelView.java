@@ -51,6 +51,7 @@ public class PaintSchemeExcelView extends AbstractXlsView {
         centerCellStyle.setAlignment(CellStyle.ALIGN_CENTER);
         centerCellStyle.setVerticalAlignment(CellStyle.VERTICAL_CENTER);
 
+        List<String> colorRankList = new ArrayList<>();
         AtomicInteger dataRowIndex = new AtomicInteger(2);//从第三行开始加载数据
         voList.stream().forEach(vo->{
             Collections.sort(vo.getParts(), Comparator.comparing(PartVo::getPartNo));
@@ -66,7 +67,25 @@ public class PaintSchemeExcelView extends AbstractXlsView {
                     dataRow.getCell(1).setCellStyle(centerCellStyle);
                 dataRowIndex.addAndGet(1);
             });
+            colorRankList.add(vo.getColorNo()+","+vo.getPartSize());
         });
+        //生成列表标题行
+        Row listColorRankTileRow = sheet1.createRow(dataRowIndex.get());
+        HKJExcelUtil.createListTitle(wb,listColorRankTileRow, new String[]{
+                "Color Code","Part Size"
+        });
+        dataRowIndex.addAndGet(1);
+        for(String str:colorRankList){
+            String colorNo = str.split(",")[0];
+            String partSize = str.split(",")[1];
+            Row dataRow = sheet1.createRow(dataRowIndex.get());
+            HKJExcelUtil.createDataCell(dataRow, 0,
+                    colorNo,partSize
+            );
+            dataRow.getCell(0).setCellStyle(centerCellStyle);
+            dataRow.getCell(1).setCellStyle(centerCellStyle);
+            dataRowIndex.addAndGet(1);
+        }
 
         sheet1.setColumnWidth(0, 5000);
         sheet1.setColumnWidth(1, 5000);

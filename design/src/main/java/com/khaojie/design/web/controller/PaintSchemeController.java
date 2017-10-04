@@ -14,10 +14,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 @Controller
 @RequestMapping("/paintscheme")
@@ -62,6 +59,7 @@ public class PaintSchemeController extends BaseController {
             });
             colorVos.add(colorVo);
         });
+        Collections.sort(colorVos, Comparator.comparing(ColorVo::getPartSize).reversed());
         model.put("colorVos", colorVos);
         model.put("partOccur", partOccurMap);
         model.put("prod",prod);
