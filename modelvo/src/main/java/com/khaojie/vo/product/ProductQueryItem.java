@@ -21,6 +21,8 @@ public class ProductQueryItem {
     private Integer pageSize;
 
     public Integer getCurPage() {
+        if(curPage==null)
+            curPage=1;
         return curPage;
     }
 
@@ -29,13 +31,14 @@ public class ProductQueryItem {
     }
 
     public Integer getPageSize() {
+        if(pageSize==null)
+            pageSize=10;
         return pageSize;
     }
 
     public void setPageSize(Integer pageSize) {
         this.pageSize = pageSize;
     }
-
     public String getSearchTable() {
         return searchTable;
     }

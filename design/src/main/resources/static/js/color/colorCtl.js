@@ -13,6 +13,9 @@ function ColorCtl(colorCtlParams){
     this.colorMaintainColorCode = colorCtlParams[9];
     this.colorMaintainColorMixFormula = colorCtlParams[10];
     this.colorMaintainColorBranchSelect = colorCtlParams[11];
+
+    this.colorBranchSelect1 = colorCtlParams[12];
+    this.colorMaintainColorNos = colorCtlParams[13]
 }
 /**
  * 查询商品
@@ -77,9 +80,8 @@ ColorCtl.prototype.loadMaintainPanel = function(colorId,btn){
  * 保存功能
  * @param btn
  */
-ColorCtl.prototype.saveColors = function(btn){
+ColorCtl.prototype.saveColor = function(btn){
     var instance = this;
-
     var obj ={
         id:$("#"+instance.colorMaintainColorId).val(),
         colorName:$("#"+instance.colorMaintainColorName).val(),
@@ -87,13 +89,33 @@ ColorCtl.prototype.saveColors = function(btn){
         mixFormula:$("#"+instance.colorMaintainColorMixFormula).val(),
         branch:$("#"+instance.colorMaintainColorBranchSelect).val()
     };
-    /*if(!isNotEmpty(obj.colorName)){
-        MyUtil.alertInfo("Please provide product name");
-        return false;
-    }*/
 
     var array = new Array();
     array.push(obj);
+    instance.submitColors(this,btn,array,0);
+};
+
+ColorCtl.prototype.saveColors = function(btn){
+    var instance = this;
+    var array = new Array();
+    var values = $("#"+instance.colorMaintainColorNos).val();
+    if(!isNotEmpty(values)){
+        MyUtil.alertInfo("Please input color nos!!!");
+        return;
+    }
+    $($("#"+instance.colorMaintainColorNos).val().split(",")).each(function(index, code){
+        var obj ={
+            id:0,
+            colorName:'',
+            code:code,
+            mixFormula:'',
+            branch:$("#"+instance.colorBranchSelect1).val()
+        };
+        array.push(obj);
+    });
+    instance.submitColors(this,btn,array,1);
+};
+ColorCtl.prototype.submitColors = function(instance,btn,array,isbatch){
     $(btn).button('loading');
     $.ajax({
         type : "POST",
@@ -101,7 +123,12 @@ ColorCtl.prototype.saveColors = function(btn){
         data : {data:JSON.stringify(array)},
         success : function(data) {
             if(data.result==1){
-                $(btn).hide();
+                if(isbatch==0){
+                    $(btn).hide();
+                }else{
+                    $(btn).button("reset");
+                    $("#"+instance.colorMaintainColorNos).val('');
+                }
                 MyUtil.alertInfo("saved!");
                 instance.queryColors();
             }else{

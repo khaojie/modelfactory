@@ -217,6 +217,43 @@ function getDataTableConfig(){
 	}
 }
 
+////分页跳转，必须存在一个表单表单里面必须存在ID为curPage的表单域
+function pageToByForm(curPage,pageFormName) {
+    var _pageFormName = (''!=pageFormName && typeof pageFormName != 'undefined' && pageFormName!=null) ? pageFormName : 'pageForm';
+    jQuery("form[id='"+_pageFormName+"'].active input[id='curPage']").val(curPage);
+    var fms = $("form[id='"+_pageFormName+"'].active").children();
+    var prm = "";
+    for ( var i = 0; i < fms.length; i++) {
+        var v = jQuery(fms[i]).val();
+        if (v != "") {
+            prm += jQuery(fms[i]).attr("name") + "=" + v + "&";
+        }
+
+    }
+    prm = prm.substring(0, prm.length - 1);
+
+    var url = jQuery("form[id='"+_pageFormName+"'].active").attr("action");
+    $.ajax({
+        type : "POST",
+        url : url,
+        data : prm,
+        success : function(msg) {
+            jQuery(jQuery("form[id='"+_pageFormName+"'].active").parent()[0]).html(msg);
+        }
+    });
+
+}
+
+/**
+ * 切换每页显示条数
+ * @param size
+ */
+function pageToByPageSize(pageSize,pageFormName) {
+    var _pageFormName = (''!=pageFormName && typeof pageFormName != 'undefined' && pageFormName!=null) ? pageFormName : 'pageForm';
+    $("form[id='"+_pageFormName+"'].active input[id='pageSize']").val(pageSize)
+    pageToByForm(1,_pageFormName);
+}
+
 if(typeof (common) == 'undefined'){
 	common={
 		clearModalBug:function(){

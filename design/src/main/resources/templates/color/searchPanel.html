@@ -3,7 +3,9 @@
         <span>
             <label>Branch:</label>
            <select id="colorBranchSelect">
+                <option value="">--All--</option>
                 <option value="1">郡士环保漆N系</option>
+                <option value="2">田宫喷漆</option>
             </select>
         </span>
         <span>
@@ -21,9 +23,24 @@
       </span>
         <span>
           <button type="button" class="btn btn-warning btn-sm" id="colorAddbtn" data-loading-text="loading maintain panel..." onclick="colorCtl.loadMaintainPanel(0,this)">
-              <span class="glyphicon glyphicon-file"></span> Create Color
+              <span class="glyphicon glyphicon-file"></span> Create Single Color
           </button>
         </span>
+    </div>
+    <div  class="panel-body">
+         <span>
+            <label>Branch:</label>
+           <select id="colorBranchSelect1">
+                <option value="1">郡士环保漆N系</option>
+                <option value="2">田宫喷漆</option>
+            </select>
+        </span>
+        <label>Color Nos:</label>
+        <input type="text" id="colorMaintainColorNos" style="width: 300px;" placeholder="format:A1,A2,A3"/>
+        <button type="button" class="btn btn-primary btn-sm" id="colorQuickSavebtn" data-loading-text="in processing now..."
+                onclick="colorCtl.saveColors(this)">
+            <span class="glyphicon glyphicon-save"></span> Quick Create
+        </button>
     </div>
     <div style="margin-top: 5px;" id="colorListTables" th:include="color/searchTable"></div>
 </div>

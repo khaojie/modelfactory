@@ -32,12 +32,13 @@ public class ColorService extends BaseService implements IColorService {
     @Override
     public PageInfo<ColorVo> queryColors(ColorQueryItem queryItem){
         Set<Condition> conditions = new HashSet<>();
-        conditions.add(new Condition("branch", Operators.EQ,queryItem.getColorBranch()));
+        if(MyUtils.isNotEmpty(queryItem.getColorBranch()))
+            conditions.add(new Condition("branch", Operators.EQ,queryItem.getColorBranch()));
         if(MyUtils.isNotEmpty(queryItem.getColorName()))
             conditions.add(new Condition("colorName", Operators.LIKE,queryItem.getColorName()));
         if(MyUtils.isNotEmpty(queryItem.getColorNumber()))
             conditions.add(new Condition("code", Operators.EQ,queryItem.getColorNumber()));
-        PageInfo<Color> pageInfo = colorDao.getPageInfo(conditions,1,1000);
+        PageInfo<Color> pageInfo = colorDao.getPageInfo(conditions,queryItem.getCurPage(),queryItem.getPageSize());
         PageInfo<ColorVo> pageInfos = new PageInfo<>(pageInfo.getCurPage(),pageInfo.getPageSize(),pageInfo.getTotalCount(),new ArrayList<>());
         pageInfo.getDataList().stream().forEach(color->{
             ColorVo vo = new ColorVo();

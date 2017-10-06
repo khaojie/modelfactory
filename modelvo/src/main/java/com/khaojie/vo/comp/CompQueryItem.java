@@ -15,6 +15,8 @@ public class CompQueryItem {
 
     private Long prodId;
     public Integer getCurPage() {
+        if(curPage==null)
+            curPage=1;
         return curPage;
     }
 
@@ -23,6 +25,8 @@ public class CompQueryItem {
     }
 
     public Integer getPageSize() {
+        if(pageSize==null)
+            pageSize=10;
         return pageSize;
     }
 

@@ -14,7 +14,10 @@ public class PartQueryItem {
     }
 
     private Long prodId;
+
     public Integer getCurPage() {
+        if(curPage==null)
+            curPage=1;
         return curPage;
     }
 
@@ -23,6 +26,8 @@ public class PartQueryItem {
     }
 
     public Integer getPageSize() {
+        if(pageSize==null)
+            pageSize=10;
         return pageSize;
     }
 

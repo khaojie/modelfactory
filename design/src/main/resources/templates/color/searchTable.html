@@ -32,15 +32,13 @@
     /*]]>*/
 </script>
 <!-- pager start -->
-<!--<c:if test="${empty error && !empty data.dataList}">-->
-    <!--<jsp:include page="/WEB-INF/jsp/common/page.jsp" flush="true" />-->
-    <!--<form action="${baseUrl}appcomp/queryAppComp" class="active" method="post" id="pageForm">-->
-        <!--<input type="hidden" name="curPage" value="${data.curPage}" id="curPage"/>-->
-        <!--<input type="hidden" name="pageSize" value="${data.pageSize}" id="pageSize"/> <%&#45;&#45;实现点击每页显示条数切换 必须加入pageSize&#45;&#45;%>-->
-        <!--<c:if test="${!empty queryParameter}">-->
-            <!--<c:forEach items="${queryParameter}" var="com" varStatus="st">-->
-                <!--<input type="hidden" name="${com.key}" value="${com.value}"/>-->
-            <!--</c:forEach>-->
-        <!--</c:if>-->
-    <!--</form>-->
-<!--</c:if>-->
+<div xmlns:th="http://www.thymeleaf.org"
+     th:if="${error eq null and data ne null and  not #lists.isEmpty(data.dataList) and data.totalPage gt 0}"
+     th:include="common/paging (pageFormName='colorPageForm')"></div>
+<form xmlns:th="http://www.thymeleaf.org"
+      th:if="${data ne null and not #lists.isEmpty(data.dataList)}"
+      th:action="''+${@urlProp.getBaseUrl()}+'color/queryColors'" class="active" method="post" id="colorPageForm">
+    <input type="hidden" name="curPage" th:value="${data.curPage}" id="curPage"/>
+    <input type="hidden" name="pageSize" th:value="${data.pageSize}" id="pageSize"/>
+    <input th:if="${queryParameter ne null}" th:each="com : ${queryParameter}" type="hidden" th:name="${com.key}" th:value="${com.value}"/>
+</form>
