@@ -72,7 +72,8 @@ PartCtl.prototype.quickSave=function(btn){
 
 PartCtl.prototype.loadMaintainPanel = function(partId,prodId,btn){
     var instance = this;
-    $(btn).button('loading');
+    if(isNotEmpty(btn))
+        $(btn).button('loading');
     $.ajax({
         type : "POST",
         url : baseUrl+"part/loadMaintainInfo",
@@ -81,12 +82,14 @@ PartCtl.prototype.loadMaintainPanel = function(partId,prodId,btn){
             prodId:prodId
         },
         success : function(html) {
-            $(btn).button("reset");
+            if(isNotEmpty(btn))
+                $(btn).button("reset");
             $("#"+instance.partMaintainPanel).empty().html(html);
             $("#"+instance.partMaintainTab+" a[href=\"#"+instance.partMaintainPanel+"\"]").trigger('click');
         },
         error: function () {
-            $(btn).button("reset");
+            if(isNotEmpty(btn))
+                $(btn).button("reset");
             MyUtil.alertInfo("System error,loading error!");
         }
     });
@@ -124,4 +127,18 @@ PartCtl.prototype.save=function(btn){
             $(btn).button("reset");
         }
     });
+};
+PartCtl.prototype.loadPrev=function(){
+    var instance = this;
+    var partId = getValById(instance.partMaintainPartPrevId);
+    if(partId>0)
+        this.loadMaintainPanel(partId,getValById(instance.partMaintainProdId),null);
+};
+
+PartCtl.prototype.loadNext=function(){
+    var instance = this;
+    var partId = getValById(instance.partMaintainPartNextId);
+    if(partId>0){
+        this.loadMaintainPanel(partId,getValById(instance.partMaintainProdId),null);
+    }
 };
