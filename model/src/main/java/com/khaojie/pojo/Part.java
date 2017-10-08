@@ -28,6 +28,9 @@ public class Part {
     @Column(name = "PART_NAME",length = 50)
     private String name;
 
+    @Column(name = "PART_COUNT",nullable = false)
+    private Integer partCount=1;
+
     @Column(name = "NOTE",length = 500)
     private String note;
 
@@ -80,4 +83,11 @@ public class Part {
         this.note = note;
     }
 
+    public Integer getPartCount() {
+        return partCount;
+    }
+
+    public void setPartCount(Integer partCount) {
+        this.partCount = partCount;
+    }
 }

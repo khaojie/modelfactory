@@ -6,6 +6,7 @@ public class PartVo {
     private String no;
     private String colors;
     private Long prodId;
+    private Integer partCount;
     public Long getSid() {
         return sid;
     }
@@ -44,5 +45,13 @@ public class PartVo {
 
     public void setProdId(Long prodId) {
         this.prodId = prodId;
+    }
+
+    public Integer getPartCount() {
+        return partCount;
+    }
+
+    public void setPartCount(Integer partCount) {
+        this.partCount = partCount;
     }
 }

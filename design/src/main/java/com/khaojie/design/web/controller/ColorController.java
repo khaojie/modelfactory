@@ -2,6 +2,7 @@ package com.khaojie.design.web.controller;
 
 import com.khaojie.pojo.Color;
 import com.khaojie.service.IColorService;
+import com.khaojie.utils.KhjUtils;
 import com.khaojie.vo.color.ColorQueryItem;
 import org.codehaus.jackson.map.ObjectMapper;
 import org.codehaus.jackson.type.JavaType;
@@ -39,6 +40,7 @@ public class ColorController extends BaseController {
     @RequestMapping(value="/queryColors")
     public String queryColors(ColorQueryItem queryItem, HttpServletRequest req, Map<String,Object> model) throws Exception{
         model.put("data",colorService.queryColors(queryItem));
+        KhjUtils.packQueryParameter(queryItem,model);
         return "color/searchTable";
     }
 

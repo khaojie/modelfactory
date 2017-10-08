@@ -127,9 +127,9 @@ public class PartService extends BaseService implements IPartService {
 
     @Override
     public PageInfo<PartVo> getPartVos(PartQueryItem queryItem){
-        PageInfo<Part> parts = partDao.getPageInfo(Condition.getConditions(new Condition("prodId", Operators.EQ,queryItem.getProdId())),1,2000);
+        PageInfo<Part> parts = partDao.getPageInfo(Condition.getConditions(new Condition("prodId", Operators.EQ,queryItem.getProdId())),queryItem.getCurPage(),queryItem.getPageSize());
         if(parts.getTotalCount()==0L)
-            return new PageInfo(1,15,0L,new ArrayList<>());
+            return new PageInfo(1,queryItem.getPageSize(),0L,new ArrayList<>());
 
         Map<Long,String> partColorMaps = new HashMap<>();
         partColorMaps.putAll(getPartColors(MyUtils.getIds("id",parts.getDataList())));
@@ -140,6 +140,7 @@ public class PartService extends BaseService implements IPartService {
             vo.setNo(part.getBoardNo()+""+part.getNumber());
             vo.setName(part.getName());
             vo.setProdId(part.getProdId());
+            vo.setPartCount(part.getPartCount());
             vo.setColors(partColorMaps.get(part.getId())==null?"":partColorMaps.get(part.getId()));
             partss.getDataList().add(vo);
         });

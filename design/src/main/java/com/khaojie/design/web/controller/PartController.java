@@ -1,6 +1,9 @@
 package com.khaojie.design.web.controller;
 
 
+import com.fd.dao.base.common.Condition;
+import com.fd.dao.base.em.Operators;
+import com.fd.util.MyUtils;
 import com.khaojie.pojo.Part;
 import com.khaojie.service.IPartService;
 import com.khaojie.utils.KhjUtils;
@@ -15,10 +18,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
+
 
 @Controller
 @RequestMapping("/part")
@@ -29,6 +30,7 @@ public class PartController extends BaseController {
     @RequestMapping(value="/queryParts")
     public String queryParts(PartQueryItem queryItem, HttpServletRequest req, Map<String,Object> model) throws Exception{
         model.put("data",partService.getPartVos(queryItem));
+        KhjUtils.packQueryParameter(queryItem,model);
         return "flow_cfg/part/searchTable";
     }
 
@@ -103,6 +105,7 @@ public class PartController extends BaseController {
         }
         String data = req.getParameter("data");
         ObjectMapper mapper = new ObjectMapper();
+        mapper.configure(org.codehaus.jackson.map.DeserializationConfig.Feature.FAIL_ON_UNKNOWN_PROPERTIES, false);
         PartSingleSaveVo vo = null;
         try{
             vo = mapper.readValue(data,PartSingleSaveVo.class);
@@ -135,6 +138,21 @@ public class PartController extends BaseController {
             List<Long> partIds = new ArrayList<>();
             partIds.add(partId);
             vo.setColors(partService.getPartColors(partIds).get(partId));
+            LinkedHashMap<String,String> orderMap = new LinkedHashMap<>();
+            orderMap.put("id","desc");
+            List<Part> prevParts = partService.getPartDao().getList(1,1, Condition.getConditions(
+                    new Condition("prodId", Operators.EQ,prodId),
+                    new Condition("id", Operators.LT,partId)
+                    ),orderMap,"id");
+            if(MyUtils.isNotEmpty(prevParts))
+                vo.setPrevId(prevParts.get(0).getId());
+            orderMap.put("id","asc");
+            List<Part> nextParts = partService.getPartDao().getList(1,1, Condition.getConditions(
+                    new Condition("prodId", Operators.EQ,prodId),
+                    new Condition("id", Operators.GT,partId)
+            ),orderMap,"id");
+            if(MyUtils.isNotEmpty(nextParts))
+                vo.setNextId(nextParts.get(0).getId());
         }else if(prodId==0L){
             model.put("error","new part creation cannot have empty prod Id");
             return "error";

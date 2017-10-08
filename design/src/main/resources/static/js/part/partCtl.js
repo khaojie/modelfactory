@@ -15,6 +15,8 @@ function PartCtl(partCtlParams){
     this.partMaintainPartName = partCtlParams[8];
     this.partMaintainPartColors = partCtlParams[9];
     this.partMaintainNote = partCtlParams[10];
+    this.partMaintainPartPrevId = partCtlParams[11];
+    this.partMaintainPartNextId = partCtlParams[12];
 }
 /**
  * 查询零件
@@ -52,7 +54,8 @@ PartCtl.prototype.quickSave=function(btn){
         data : data,
         success : function(data) {
             if(data.result==1){
-                $(btn).hide();
+                $(btn).button("reset");
+                $("#"+instance.partMaintainPartNos).val('');
                 MyUtil.alertInfo("saved!");
                 instance.queryParts(instance.mainProdId);
             }else{

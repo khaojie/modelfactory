@@ -84,4 +84,19 @@ public class KhjUtils {
         Matcher m = p.matcher(str);
         return m.replaceAll("").trim();
     }
+
+    public static void packQueryParameter(Object queryInstance , Map<String,Object> model) throws IllegalAccessException {
+        List<Entry<String,Object>> entryList = new ArrayList<>();
+        for(Field field:queryInstance.getClass().getDeclaredFields()){
+            String name = field.getName();
+            field.setAccessible(true);
+            try {
+                Object value = field.get(queryInstance);
+                entryList.add(new Entry(name,value));
+            } catch (Exception e) {
+                throw e;
+            }
+        }
+        model.put("queryParameter",entryList);
+    }
 }

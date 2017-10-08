@@ -3,7 +3,8 @@
         <span style="display: none;">
             <input type="hidden" id="partMaintainPartId" th:value="${vo.part.id}"/>
             <input type="hidden" id="partMaintainProdId" th:value="${vo.part.prodId}"/>
-
+            <input type="hidden" id="partMaintainPartPrevId" th:value="${vo.prevId}"/>
+            <input type="hidden" id="partMaintainPartNextId" th:value="${vo.nextId}"/>
         </span>
         <div style="width: 100%; text-align: center;">
             <div style="width: 100%;">
@@ -23,6 +24,10 @@
                 <input type="text" id="partMaintainPartColors" th:value="${vo.colors}" style="margin-right: 10px;"/>
             </div>
             <div style="width: 100%;">
+                <label style="width: 200px; text-align: left;">Part Count</label>
+                <input type="text" id="partMaintainPartCount" th:value="${vo.part.partCount}" style="margin-right: 10px;"/>
+            </div>
+            <div style="width: 100%;">
                 <label style="width: 200px; text-align: left; vertical-align: top;">Note:</label>
                 <textarea id="partMaintainNote" rows="3" th:text="${vo.part.note}" style="margin-right: 22px;"></textarea>
             </div>
@@ -32,7 +37,5 @@
                 </button>
             </div>
         </div>
-
-
     </div>
 </div>
