@@ -2,7 +2,7 @@ if(typeof (panelKeyDownController) == 'undefined') {
     panelKeyDownController = {
         exeArray:new Array(),
         register:function(panelId,executor,keyCode){
-            if(this.getDefined(panelId,keyCode)!=null){
+            if(this.getDefined(panelId,keyCode)==null){
                 this.exeArray.push({
                     panelId:panelId,
                     executor:executor,
@@ -21,11 +21,11 @@ if(typeof (panelKeyDownController) == 'undefined') {
             });
             return obj;
         },
-        executeIfDefined:function(panelId,keyCode){
-            var obj = this.getDefined(panelId,keyCode);
+        executeIfDefined:function(keyCode){
+            var obj = this.getDefined($("div.active.shortcut").attr('id'),keyCode);
             if(obj==null)
                 return;
-            eval(obj.executor+"()");
+            eval(obj.executor);
         }
     }
 }

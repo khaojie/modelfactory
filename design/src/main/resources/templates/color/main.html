@@ -5,8 +5,8 @@
             <li><a href="#colorMaintainPanel" id="colorMaintainPanelTab" data-toggle="tab">Color Maintain</a></li>
         </ul>
         <div class="tab-content">
-            <div class="tab-pane fade in active" id="colorMaintainSearchPanel" th:include="color/searchPanel"></div>
-            <div class="tab-pane fade" id="colorMaintainPanel"></div>
+            <div class="shortcut tab-pane fade in active" id="colorMaintainSearchPanel" th:include="color/searchPanel"></div>
+            <div class="shortcut tab-pane fade" id="colorMaintainPanel"></div>
         </div>
     </div>
     <script type="text/javascript" th:src="@{/js/color/colorCtl.js(timestamp=${#httpServletRequest.getAttribute('loginTimeStr')})}"></script>
@@ -27,7 +27,10 @@
         colorCtlParams.push('colorMaintainColorBranchSelect');
         colorCtlParams.push('colorBranchSelect1');
         colorCtlParams.push('colorMaintainColorNos');
+        colorCtlParams.push('colorMaintainSearchPanel');
         var colorCtl = new ColorCtl(colorCtlParams);
+        panelKeyDownController.register('colorMaintainSearchPanel','colorCtl.pagePrev()',37);
+        panelKeyDownController.register('colorMaintainSearchPanel','colorCtl.pageNext()',39);
         /*]]>*/
     </script>
 </div>

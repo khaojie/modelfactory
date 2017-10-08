@@ -34,10 +34,10 @@
 <!-- pager start -->
 <div xmlns:th="http://www.thymeleaf.org"
      th:if="${error eq null and data ne null and  not #lists.isEmpty(data.dataList) and data.totalPage gt 0}"
-     th:include="common/paging (pageFormName='colorPageForm')"></div>
+     th:include="common/paging (pageFormName='pageForm')"></div>
 <form xmlns:th="http://www.thymeleaf.org"
       th:if="${data ne null and not #lists.isEmpty(data.dataList)}"
-      th:action="''+${@urlProp.getBaseUrl()}+'color/queryColors'" class="active" method="post" id="colorPageForm">
+      th:action="''+${@urlProp.getBaseUrl()}+'color/queryColors'" class="active" method="post" id="pageForm">
     <input type="hidden" name="curPage" th:value="${data.curPage}" id="curPage"/>
     <input type="hidden" name="pageSize" th:value="${data.pageSize}" id="pageSize"/>
     <input th:if="${queryParameter ne null}" th:each="com : ${queryParameter}" type="hidden" th:name="${com.key}" th:value="${com.value}"/>

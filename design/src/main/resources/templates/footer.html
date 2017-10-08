@@ -19,8 +19,8 @@
     <script type="text/javascript" th:src="@{/js/MyUtil.js(timestamp=${#httpServletRequest.getAttribute('loginTimeStr')})}"></script>
     <script type="text/javascript" th:src="@{/js/util/DateUtil.js(timestamp=${#httpServletRequest.getAttribute('loginTimeStr')})}"></script>
     <script type="text/javascript" th:src="@{/js/util/myutil.storage.js(timestamp=${#httpServletRequest.getAttribute('loginTimeStr')})}"></script>
-    <script type="text/javascript" th:src="@{/js/common/panelKeyDownController.js(timestamp=${#httpServletRequest.getAttribute('loginTimeStr')})}"></script>
     <script type="text/javascript" th:src="@{/js/common/pageController.js(timestamp=${#httpServletRequest.getAttribute('loginTimeStr')})}"></script>
+    <script type="text/javascript" th:src="@{/js/common/panelKeyDownController.js(timestamp=${#httpServletRequest.getAttribute('loginTimeStr')})}"></script>
     <script type="text/javascript" th:src="@{/js/user/userController.js(timestamp=${#httpServletRequest.getAttribute('loginTimeStr')})}"></script>
     <script type="text/javascript" th:src="@{/js/common/idRepeatController.js(timestamp=${#httpServletRequest.getAttribute('loginTimeStr')})}"></script>
     <script type="text/javascript" th:src="@{/js/websocket/webSocketController.js(timestamp=${#httpServletRequest.getAttribute('loginTimeStr')})}"></script>
@@ -41,6 +41,10 @@
             pageController.init();
             userController.globalAjaxSetUp();
             $.ajaxSetup({cache:false});
+            $(document).on("keydown",function(e){
+                var keycode = e.which || e.keyCode;
+                panelKeyDownController.executeIfDefined(keycode);
+            });
         });
         window.onresize = function () {
             if(typeof(pageController) != "undefined")

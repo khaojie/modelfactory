@@ -10,8 +10,8 @@
             <option value="100" th:selected="${data.pageSize eq 100}">100</option>
         </select>&nbsp;&nbsp;
         Current Page:&nbsp;<span th:text="${data.curPage}"></span>&nbsp;&nbsp;
-        <a th:if="${data.isPrev}" href="javascript:void(0)" th:onclick="'javascript:pageToByForm(\''+${data.curPage-1}+'\',\''+${pageFormName}+'\')'" >上一页</a>
-        <a th:if="${data.isNext}" href="javascript:void(0)" th:onclick="'javascript:pageToByForm(\''+${data.curPage+1}+'\',\''+${pageFormName}+'\')'" >下一页</a>
+        <a class="prevPageBtn" th:if="${data.isPrev}" href="javascript:void(0)" th:onclick="'javascript:pageToByForm(\''+${data.curPage-1}+'\',\''+${pageFormName}+'\')'" >上一页</a>
+        <a class="nextPageBtn" th:if="${data.isNext}" href="javascript:void(0)" th:onclick="'javascript:pageToByForm(\''+${data.curPage+1}+'\',\''+${pageFormName}+'\')'" >下一页</a>
         <select th:onchange="'javascript:pageToByForm(this.value,\''+${pageFormName}+'\')'">
             <option th:each="i : ${#numbers.sequence(data.pageIndex.startIndex,data.pageIndex.endIndex,1)}"
                     th:value="${i}"

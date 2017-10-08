@@ -5,6 +5,7 @@ if(typeof (pageController) == 'undefined'){
     pageController={
         pageArray:new Array(),
         conflictGroup:new Array(),
+        curDisplayPageId:'',
         init:function(){//初始化调用
            if(!this.hasExistTab('custDetailTab'))
                 this.pageArray.push('custDetailTab');
@@ -27,6 +28,7 @@ if(typeof (pageController) == 'undefined'){
                     $("#"+pageId+" form[id='pageForm']").removeClass('inactive').addClass('active');
                 }
             }
+            this.curDisplayPageId=curPageId;
         },
         pushPage : function(curPageId,content,menuName){//curPageId为当前被增加的页面
             var hasExistPage = this.hasExistTab(curPageId);

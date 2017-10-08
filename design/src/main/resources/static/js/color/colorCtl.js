@@ -15,7 +15,8 @@ function ColorCtl(colorCtlParams){
     this.colorMaintainColorBranchSelect = colorCtlParams[11];
 
     this.colorBranchSelect1 = colorCtlParams[12];
-    this.colorMaintainColorNos = colorCtlParams[13]
+    this.colorMaintainColorNos = colorCtlParams[13];
+    this.colorMaintainSearchPanel = colorCtlParams[14];
 }
 /**
  * 查询商品
@@ -141,4 +142,11 @@ ColorCtl.prototype.submitColors = function(instance,btn,array,isbatch){
             $(btn).button("reset");
         }
     });
+};
+ColorCtl.prototype.pagePrev=function(){
+    $("#"+this.colorMaintainSearchPanel+" form[id='pageForm'].active").prev().find($('a.prevPageBtn')).trigger('click');
+};
+
+ColorCtl.prototype.pageNext=function(){
+    $("#"+this.colorMaintainSearchPanel+" form[id='pageForm'].active").prev().find($('a.nextPageBtn')).trigger('click');
 };
