@@ -25,7 +25,7 @@ jar {
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
 repositories {
-    maven{ url 'http://192.168.0.102:9081/repository/HKJ_GROUP/'}
+    maven{ url 'http://192.168.11.81:8081/nexus/content/groups/public/'}
 }
 
 bootRepackage {
