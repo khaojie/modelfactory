@@ -18,7 +18,7 @@ repositories {
 }
 task global_props1{
     ext.spring_group_id="org.springframework"
-    ext.spring_version="4.3.8.RELEASE"
+    ext.spring_version="5.1.3.RELEASE"
 }
 dependencies {
     compile group:global_props1.spring_group_id,name:'spring-context',version:global_props1.spring_version
@@ -26,7 +26,7 @@ dependencies {
     compile group:global_props1.spring_group_id,name:'spring-orm',version:global_props1.spring_version
     compile group:global_props1.spring_group_id,name:'spring-jdbc',version:global_props1.spring_version
     compile group:'com.mchange',name:'c3p0',version:'0.9.5.2'
-    compile group:'mysql',name:'mysql-connector-java',version:'5.1.38'
+    compile group:'mysql',name:'mysql-connector-java',version:'8.0.13'
     compile group:'com.fd',name:'jpafordata',version:'3.8.2'
     compile project(':model')
 }

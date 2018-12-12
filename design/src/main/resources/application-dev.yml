@@ -6,10 +6,10 @@ urlProp:
   baseUrl: http://localhost:8081/design/
 
 datasource:
-  driverClass: com.mysql.jdbc.Driver
-  jdbcUrl: jdbc:mysql://localhost:3306/model_factory
+  driverClass: com.mysql.cj.jdbc.Driver
+  jdbcUrl: jdbc:mysql://localhost:3306/modelfactory?useSSL=false
   user: root
-  password: root
+  password: 12345678
   initialPoolSize: 3
   minPoolSize: 1
   idleConnectionTestPeriod: 1800
