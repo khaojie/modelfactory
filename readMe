@@ -1,1 +1,5 @@
-gradle bootRun --args='--spring.profiles.active=dev'
+gradle bootRun --args='--spring.profiles.active=dev' //gradle启运spring boot
+
+gradle bootJar // gradle 打成JAR包
+
+java -jar -Dspring.profiles.active=dev /Users/haojiekang/ProjectWorkSpace/modelfactory/design/build/libs/design-0.2.jar  //使用Java命令运行JAR

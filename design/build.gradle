@@ -40,7 +40,6 @@ dependencies {
     compile("org.springframework.boot:spring-boot-starter-thymeleaf:2.1.1.RELEASE")
     compile("org.apache.poi:poi-ooxml:3.14")
     compile("org.apache.poi:poi:3.14")
-    compile("redis.clients:jedis:3.0.0")
     
     /**jsp support start**/
     /*compile("javax.servlet:jstl")

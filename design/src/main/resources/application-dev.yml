@@ -1,6 +1,7 @@
 server:
+  servlet:
+    context-path:  /design
   port: 8081
-  context-path: /design
 
 urlProp:
   baseUrl: http://localhost:8081/design/
