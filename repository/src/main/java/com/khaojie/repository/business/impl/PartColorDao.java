@@ -1,9 +1,9 @@
-package com.khaojie.repository.base.impl;
+package com.khaojie.repository.business.impl;
 
 import com.khaojie.pojo.PartColor;
-import com.khaojie.repository.base.IPartColorDao;
+import com.khaojie.repository.base.impl.ModelDao;
 import org.springframework.stereotype.Repository;
-
+import com.khaojie.repository.business.IPartColorDao;
 /**
  * Created by khaojie on 2017/6/30.
  */

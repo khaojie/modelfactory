@@ -1,7 +1,8 @@
-package com.khaojie.repository.base.impl;
+package com.khaojie.repository.business.impl;
 
 import com.khaojie.pojo.Color;
-import com.khaojie.repository.base.IColorDao;
+import com.khaojie.repository.base.impl.ModelDao;
+import com.khaojie.repository.business.IColorDao;
 import org.springframework.stereotype.Repository;
 
 /**

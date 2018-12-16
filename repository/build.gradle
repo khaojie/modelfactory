@@ -27,7 +27,7 @@ dependencies {
     compile group:global_props1.spring_group_id,name:'spring-jdbc',version:global_props1.spring_version
     compile group:'com.mchange',name:'c3p0',version:'0.9.5.2'
     compile group:'mysql',name:'mysql-connector-java',version:'8.0.13'
-    compile group:'com.fd',name:'jpafordata',version:'3.8.2'
+    compile group:'com.fd',name:'jpafordata',version:'3.8.6'
     compile project(':model')
 }
 

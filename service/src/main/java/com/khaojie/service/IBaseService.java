@@ -1,6 +1,6 @@
 package com.khaojie.service;
 
-import com.khaojie.repository.base.*;
+import com.khaojie.repository.business.*;
 
 /**
  * Created by khaojie on 2017/7/23.

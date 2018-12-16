@@ -1,18 +1,18 @@
 server:
-  servlet:
-    context-path:  /design
-  port: 8081
+                      servlet:
+                        context-path:  /design
+                      port: 8081
 
-urlProp:
-  baseUrl: http://localhost:8081/design/
+                      urlProp:
+                        baseUrl: http://localhost:8081/design/
 
-datasource:
-  driverClass: com.mysql.cj.jdbc.Driver
-  jdbcUrl: jdbc:mysql://localhost:3306/modelfactory?useSSL=false
-  user: root
-  password: 12345678
-  initialPoolSize: 3
-  minPoolSize: 1
-  idleConnectionTestPeriod: 1800
-  maxPoolSize: 50
-  acquireIncrement: 5
+                      datasource:
+                        driverClass: com.mysql.cj.jdbc.Driver
+                        jdbcUrl: jdbc:mysql://localhost:3306/model_factory?useSSL=false
+                        user: root
+                        password: 12345678
+                        initialPoolSize: 3
+                        minPoolSize: 1
+                        idleConnectionTestPeriod: 1800
+                        maxPoolSize: 50
+                        acquireIncrement: 5

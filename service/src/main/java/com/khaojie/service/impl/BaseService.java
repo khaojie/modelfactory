@@ -1,6 +1,6 @@
 package com.khaojie.service.impl;
 
-import com.khaojie.repository.base.*;
+import com.khaojie.repository.business.*;
 import com.khaojie.service.IBaseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

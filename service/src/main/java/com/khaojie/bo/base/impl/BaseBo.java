@@ -1,8 +1,8 @@
 package com.khaojie.bo.base.impl;
 
 import com.khaojie.bo.base.IBaseBo;
-import com.khaojie.repository.base.IPartColorDao;
-import com.khaojie.repository.base.IPartDao;
+import com.khaojie.repository.business.IPartColorDao;
+import com.khaojie.repository.business.IPartDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 

@@ -1,7 +1,8 @@
 package com.khaojie.bo.base;
 
-import com.khaojie.repository.base.IPartColorDao;
-import com.khaojie.repository.base.IPartDao;
+
+import com.khaojie.repository.business.IPartColorDao;
+import com.khaojie.repository.business.IPartDao;
 
 public interface IBaseBo {
     IPartDao getPartDao();

@@ -17,7 +17,7 @@ extraProp:
 logging:
     level:
       root: info
-    file: d:\\fruitday\\design.log
+    file: /Users/haojiekang/log/design.log
 
 customjpa:
   generateDdl: true

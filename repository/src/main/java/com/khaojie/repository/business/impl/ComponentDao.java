@@ -1,7 +1,8 @@
-package com.khaojie.repository.base.impl;
+package com.khaojie.repository.business.impl;
 
 import com.khaojie.pojo.Component;
-import com.khaojie.repository.base.IComponentDao;
+import com.khaojie.repository.base.impl.ModelDao;
+import com.khaojie.repository.business.IComponentDao;
 import org.springframework.stereotype.Repository;
 
 @Repository
